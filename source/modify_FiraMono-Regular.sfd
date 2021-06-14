@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1441706346
-ModificationTime: 1623644609
+ModificationTime: 1623655911
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -3385,9 +3385,9 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 24 12 5
+WinInfo: 12 12 5
 AnchorClass2: "Anchor-0" "'mark' Mark Positioning in Latin lookup 0 subtable" "Anchor-1" "'mark' Mark Positioning in Latin lookup 0 subtable" "Anchor-2" "'mark' Mark Positioning in Latin lookup 1 subtable" "Anchor-3" "'mark' Mark Positioning in Latin lookup 1 subtable" "Anchor-4" "'mark' Mark Positioning in Latin lookup 2 subtable" "Anchor-5" "'mark' Mark Positioning in Latin lookup 2 subtable" "Anchor-6" "'mkmk' Mark to Mark in Latin lookup 3 subtable" "Anchor-7" "'mkmk' Mark to Mark in Latin lookup 4 subtable" "Anchor-8" "'mkmk' Mark to Mark in Latin lookup 5 subtable"
-BeginChars: 1114246 2
+BeginChars: 1114246 5
 
 StartChar: zero
 Encoding: 48 48 0
@@ -3397,26 +3397,26 @@ Flags: W
 LayerCount: 2
 Fore
 SplineSet
-480 623.5 m 128,-1,1
- 539 530 539 530 539 353 c 128,-1,3
- 539 176 539 176 480 82 c 128,-1,4
- 421 -12 421 -12 308 -12 c 256,5,6
- 195 -12 195 -12 135.5 82 c 128,-1,7
- 76 176 76 176 76 353 c 0,8,9
- 76 529 76 529 135 623 c 128,-1,10
- 194 717 194 717 308 717 c 256,11,0
- 421 717 421 717 480 623.5 c 128,-1,1
-168 353 m 0,13,14
- 168 235 168 235 186 169 c 1,15,-1
- 402 603 l 1,16,17
- 370 649 370 649 308 648 c 0,18,12
- 168 648 168 648 168 353 c 0,13,14
-448 353 m 0,20,21
- 448 473 448 473 430 539 c 1,22,-1
- 215 103 l 1,23,24
- 232 80 232 80 254.5 69 c 128,-1,25
- 277 58 277 58 308 58 c 0,26,19
- 448 58 448 58 448 353 c 0,20,21
+480 608.536132812 m 128,-1,1
+ 539 517.280273438 539 517.280273438 539 344.528320312 c 128,-1,2
+ 539 171.776367188 539 171.776367188 480 80.0322265625 c 128,-1,3
+ 421 -11.7119140625 421 -11.7119140625 308 -11.7119140625 c 256,4,5
+ 195 -11.7119140625 195 -11.7119140625 135.5 80.0322265625 c 128,-1,6
+ 76 171.776367188 76 171.776367188 76 344.528320312 c 0,7,8
+ 76 516.303710938 76 516.303710938 135 608.047851562 c 128,-1,9
+ 194 699.791992188 194 699.791992188 308 699.791992188 c 256,10,0
+ 421 699.791992188 421 699.791992188 480 608.536132812 c 128,-1,1
+168 344.528320312 m 0,11,12
+ 168 229.360351562 168 229.360351562 186 164.944335938 c 1,13,-1
+ 402 588.528320312 l 1,14,15
+ 370 633.423828125 370 633.423828125 308 632.448242188 c 0,16,17
+ 168 632.448242188 168 632.448242188 168 344.528320312 c 0,11,12
+448 344.528320312 m 0,18,19
+ 448 461.6484375 448 461.6484375 430 526.064453125 c 1,20,-1
+ 215 100.528320312 l 1,21,22
+ 232 78.080078125 232 78.080078125 254.5 67.34375 c 128,-1,23
+ 277 56.6083984375 277 56.6083984375 308 56.6083984375 c 0,24,25
+ 448 56.6083984375 448 56.6083984375 448 344.528320312 c 0,18,19
 EndSplineSet
 Substitution2: "'zero' Slashed Zero in Latin lookup 25 subtable" zero.zero
 Substitution2: "'onum' Oldstyle Figures in Latin lookup 22 subtable" zero.tosf
@@ -3489,6 +3489,73 @@ SplineSet
  128.5 150 128.5 150 172.5 104 c 0,80,81
  193.5 82 193.5 82 222 70 c 128,-1,82
  250.5 58 250.5 58 283.5 58 c 0,63,64
+EndSplineSet
+EndChar
+
+StartChar: asterisk
+Encoding: 42 42 2
+Width: 615
+VWidth: 999
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+351 593 m 1,0,-1
+ 264 593 l 1,1,-1
+ 271 386 l 1,2,-1
+ 76 455 l 1,3,-1
+ 50 374 l 1,4,-1
+ 248 315 l 1,5,-1
+ 122 151 l 1,6,-1
+ 190 101 l 1,7,-1
+ 308 272 l 1,8,-1
+ 425 101 l 1,9,-1
+ 494 151 l 1,10,-1
+ 367 315 l 1,11,-1
+ 566 374 l 1,12,-1
+ 539 455 l 1,13,-1
+ 345 386 l 1,14,-1
+ 351 593 l 1,0,-1
+EndSplineSet
+EndChar
+
+StartChar: plus
+Encoding: 43 43 3
+Width: 615
+VWidth: 999
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+266 559 m 1,0,-1
+ 347 559 l 1,1,-1
+ 347 355 l 1,2,-1
+ 548 355 l 1,3,-1
+ 548 283 l 1,4,-1
+ 347 283 l 1,5,-1
+ 347 79 l 1,6,-1
+ 266 79 l 1,7,-1
+ 266 283 l 1,8,-1
+ 67 283 l 1,9,-1
+ 67 355 l 1,10,-1
+ 266 355 l 1,11,-1
+ 266 559 l 1,0,-1
+EndSplineSet
+EndChar
+
+StartChar: bar
+Encoding: 124 124 4
+Width: 615
+VWidth: 999
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+269 923 m 1,0,-1
+ 346 923 l 1,1,-1
+ 346 -308 l 1,2,-1
+ 269 -308 l 1,3,-1
+ 269 923 l 1,0,-1
 EndSplineSet
 EndChar
 EndChars

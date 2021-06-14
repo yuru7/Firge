@@ -433,6 +433,8 @@ while (i < SizeOf(input_list))
   # 修正グリフの取り込み
   Select(0u0030)      # 0
   SelectMore(0u0026) # &
+  SelectMore(0u002A, 0u002B) # * +
+  SelectMore(0u007C) # |
   Clear()
   MergeFonts(input_mod_list[i])
 
@@ -447,33 +449,11 @@ while (i < SizeOf(input_list))
   UnlinkReference()
   ScaleToEm(${em_ascent}, ${em_descent})
 
-  # broken bar に貼り付ける素材準備 (パイプ記号を使うため、後述のパイプ破断線化より前に処理する)
-#  Select(0u007c); Copy()
-#  Select(0u0090); Paste(); Scale(100, 25)
-
-  # パイプの破断線化 (broken bar を縦に拡大)
-#  Select(0u00a6); Copy()
-#  Select(0u007c); Paste()
-#  Scale(100, 114)
-
-  # 破断線化したパイプ記号と broken bar の区別を付きやすくする
-#  Select(0u0090); Copy()
-#  Select(0u00a6); Paste(); PasteWithOffset(0, 350); PasteWithOffset(0, -350)
-#  Select(0u0090); Clear()
-
-  # 0 生成
-#  Select(0u004f); Copy()
-#  Select(0u0030); Paste(); Scale(99, 100)
-#  Select(0u00b7); Copy()
-#  Select(0ufff0); Paste(); Scale(75, 100); Copy()
-#  Select(0u0030); PasteInto()
-#  Select(0ufff0); Clear()
-
   # クォーテーションの拡大
-#  Select(0u0022)
-#  SelectMore(0u0027)
-#  SelectMore(0u0060)
-#  Scale(109, 106)
+  Select(0u0022)
+  SelectMore(0u0027)
+  SelectMore(0u0060)
+  Scale(109, 106)
 
   # ; : , . の拡大
 #  Select(0u003a)
@@ -486,21 +466,10 @@ while (i < SizeOf(input_list))
 #  Select(0u002e); Move(0, 5)  # .
 #  Select(0u002c); Move(0, -8) # ,
 
-  # クォーテーションの拡大
-#  Select(0u0027)
-#  SelectMore(0u0022)
-#  SelectMore(0u0060)
-#  Scale(108, 104)
-
   # Eclipse Pleiades 半角スペース記号 (U+1d1c) 対策
   Select(0u054d); Copy()
   Select(0u1d1c); Paste()
   Scale(85, 60)
-
-  # 左右の波括弧の縦位置合わせ (Regular だけ)
-#  if (i == 0)
-#    Select(0u007D); Move(0, 5)
-#  endif
 
   # 結合分音記号は全て源柔ゴシックをベースにするため削除する
 #  Select(0u0300, 0u036f); Clear()
@@ -2781,22 +2750,22 @@ $fontforge_command -script ${tmpdir}/${modified_hack_generator} 2> $redirection_
 $fontforge_command -script ${tmpdir}/${modified_genjyuu_generator} 2> $redirection_stderr || exit 4
 
 # Generate powerline Symbol
-$fontforge_command -script ${tmpdir}/${modified_hack_powerline_generator} 2> $redirection_stderr || exit 4
+# $fontforge_command -script ${tmpdir}/${modified_hack_powerline_generator} 2> $redirection_stderr || exit 4
 
 # Generate powerline Symbol
-$fontforge_command -script ${tmpdir}/${modified_hack35_powerline_generator} 2> $redirection_stderr || exit 4
+# $fontforge_command -script ${tmpdir}/${modified_hack35_powerline_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified HackGen Nerd Symbol
-$fontforge_command -script ${tmpdir}/${modified_hackgen_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+# $fontforge_command -script ${tmpdir}/${modified_hackgen_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified HackGen Nerd Symbol
-$fontforge_command -script ${tmpdir}/${modified_hackgen35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+# $fontforge_command -script ${tmpdir}/${modified_hackgen35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified HackGen Console Nerd Symbol
-$fontforge_command -script ${tmpdir}/${modified_hackgen_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+# $fontforge_command -script ${tmpdir}/${modified_hackgen_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified HackGen Console Nerd Symbol
-$fontforge_command -script ${tmpdir}/${modified_hackgen35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+# $fontforge_command -script ${tmpdir}/${modified_hackgen35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Hack evacuation symbol
 # $fontforge_command -script ${tmpdir}/${modified_hack_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
