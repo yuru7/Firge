@@ -5,7 +5,7 @@ Copyright (c) 2019, Yuko Otawara with Reserved Font Name "Firge"
 - Source font softwares are licensed under the
     - SIL Open Font License, Version 1.1
         - Fira Mono : https://github.com/mozilla/Fira
-        - 源柔ゴシック : http://jikasei.me/font/genjyuu/
+        - 源真ゴシック : http://jikasei.me/font/genshin/
 
 ## SIL Open Font License
 
