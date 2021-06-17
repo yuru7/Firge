@@ -1,4 +1,6 @@
-Fira Mono と源真ゴシックを合成したプログラミングフォント **Firge (ファージ)**
+# プログラミングフォント **Firge (ファージ)**
+
+Fira Mono と源真ゴシックを合成したプログラミングフォントです。
 
 ダウンロードはこちら: [Releases](https://github.com/yuru7/Firge/releases)
 
