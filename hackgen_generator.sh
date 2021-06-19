@@ -2833,22 +2833,22 @@ $fontforge_command -script ${tmpdir}/${hackgen35_box_drawing_light_generator} 2>
 # Add hinting HackGen Regular
 for f in ${hackgen_familyname}-Regular.ttf ${hackgen_familyname}${hackgen_console_suffix}-Regular.ttf
 do
-  ttfautohint -m hinting_post_processing/hackgen-regular-ctrl.txt -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
+  ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
 # Add hinting HackGen Bold
 for f in ${hackgen_familyname}-Bold.ttf ${hackgen_familyname}${hackgen_console_suffix}-Bold.ttf
 do
-  ttfautohint -m hinting_post_processing/hackgen-bold-ctrl.txt -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
+  ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
 # Add hinting HackGen35 Regular
 for f in ${hackgen35_familyname}-Regular.ttf ${hackgen35_familyname}${hackgen_console_suffix}-Regular.ttf
 do
-  ttfautohint -m hinting_post_processing/hackgen35-regular-ctrl.txt -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
+  ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
 # Add hinting HackGen35 Bold
 for f in ${hackgen35_familyname}-Bold.ttf ${hackgen35_familyname}${hackgen_console_suffix}-Bold.ttf
 do
-  ttfautohint -m hinting_post_processing/hackgen35-bold-ctrl.txt -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
+  ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
 
 for style in Regular Bold
