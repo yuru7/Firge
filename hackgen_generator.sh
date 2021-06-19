@@ -1740,10 +1740,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -1831,10 +1831,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -1922,10 +1922,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2013,10 +2013,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2104,10 +2104,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2192,10 +2192,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2280,10 +2280,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2368,10 +2368,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2456,10 +2456,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2544,10 +2544,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2632,10 +2632,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
@@ -2720,10 +2720,10 @@ while (i < SizeOf(fontstyle_list))
   # Save HackGen
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
   else
         Print("Save " + fontfamily + "-" + fontstyle_list[i] + ".ttf")
-        Generate(fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
+        Generate("${base_dir}/" + fontfamily + "-" + fontstyle_list[i] + ".ttf", "")
   endif
   Close()
 
