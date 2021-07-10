@@ -274,8 +274,24 @@ powerline_extra_symbols='
 
 # Nerd Fonts から適用するグリフ
 select_nerd_symbols="
+  # IEC Power Symbols
+  SelectMore(0u23fb, 0u23fe)
+  SelectMore(0u2b58)
+
+  # Octicons
+  SelectMore(0u2665)
+  SelectMore(0u26A1)
+  SelectMore(0uf27c)
+  SelectMore(0uf400, 0uf4a8)
+
+  # Font Awesome Extension
+  SelectMore(0ue200, 0ue2a9)
+
+  # Weather
+  SelectMore(0ue300, 0ue3e3)
+
   # Seti-UI + Custom
-  SelectMore(0ue5fa, 0ue62b)
+  SelectMore(0ue5fa, 0ue62e)
 
   # Devicons
   SelectMore(0ue700, 0ue7c5)
@@ -283,27 +299,11 @@ select_nerd_symbols="
   # Font Awesome
   SelectMore(0uf000, 0uf2e0)
 
-  # Font Awesome Extension
-  SelectMore(0ue200, 0ue2a9)
+  # Font Logos (Formerly Font Linux)
+  SelectMore(0uf300, 0uf31c)
 
   # Material Design Icons
   SelectMore(0uf500, 0ufd46)
-
-  # Weather
-  SelectMore(0ue300, 0ue3eb)
-
-  # Octicons
-  SelectMore(0uf400, 0uf4a8)
-  SelectMore(0u2665)
-  SelectMore(0u26A1)
-  SelectMore(0uf27c)
-
-  # IEC Power Symbols
-  SelectMore(0u23fb, 0u23fe)
-  SelectMore(0u2b58)
-
-  # Font Logos (Formerly Font Linux)
-  SelectMore(0uf300, 0uf313)
 
   # Pomicons -> 商用不可のため除外
   SelectFewer(0ue000, 0ue00d)
