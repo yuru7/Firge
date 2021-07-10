@@ -1,30 +1,30 @@
 #!/bin/sh
 
 base_dir=$(cd $(dirname $0); pwd)
-# HackGen Generator
-hackgen_version="0.0.2"
+# Firge Generator
+firge_version="0.0.2"
 
 # Set familyname
 familyname_preffix="$1"
-hackgen_familyname=${familyname_preffix}"Firge"
-hackgen_familyname_suffix=""
-hackgen35_familyname=${hackgen_familyname}"35"
-hackgen35_familyname_suffix=""
-hackgen_console_suffix="Console"
-hackgen_evacuation_nerd_familyname="Evacuation${hackgen_familyname}Nerd"
-hackgen35_evacuation_nerd_familyname="Evacuation${hackgen35_familyname}Nerd"
-hackgen_nerd_familyname=${hackgen_familyname}"Nerd"
-hackgen35_nerd_familyname=${hackgen35_familyname}"Nerd"
-hackgen_evacuation_symbol_familyname=${hackgen_familyname}"EvacuationSymbol"
-hackgen35_evacuation_symbol_familyname=${hackgen35_familyname}"EvacuationSymbol"
-hackgen_box_drawing_light_familyname=${hackgen_familyname}"BoxDrawingLight"
-hackgen35_box_drawing_light_familyname=${hackgen35_familyname}"BoxDrawingLight"
+firge_familyname=${familyname_preffix}"Firge"
+firge_familyname_suffix=""
+firge35_familyname=${firge_familyname}"35"
+firge35_familyname_suffix=""
+firge_console_suffix="Console"
+firge_evacuation_nerd_familyname="Evacuation${firge_familyname}Nerd"
+firge35_evacuation_nerd_familyname="Evacuation${firge35_familyname}Nerd"
+firge_nerd_familyname=${firge_familyname}"Nerd"
+firge35_nerd_familyname=${firge35_familyname}"Nerd"
+firge_evacuation_symbol_familyname=${firge_familyname}"EvacuationSymbol"
+firge35_evacuation_symbol_familyname=${firge35_familyname}"EvacuationSymbol"
+firge_box_drawing_light_familyname=${firge_familyname}"BoxDrawingLight"
+firge35_box_drawing_light_familyname=${firge35_familyname}"BoxDrawingLight"
 
 # Set ascent and descent (line width parameters)
-hackgen_ascent=938
-hackgen_descent=210
-hackgen35_ascent=951
-hackgen35_descent=243
+firge_ascent=938
+firge_descent=210
+firge35_ascent=951
+firge35_descent=243
 
 em_ascent=881
 em_descent=143
@@ -35,13 +35,13 @@ typo_line_gap=80
 hack_width=616
 genjyuu_width=1024
 
-hackgen_half_width=540
-hackgen_full_width=$((${hackgen_half_width} * 2))
+firge_half_width=540
+firge_full_width=$((${firge_half_width} * 2))
 hack_shrink_x=88
 hack_shrink_y=93
 
-hackgen35_half_width=618
-hackgen35_full_width=$((${hackgen35_half_width} * 5 / 3))
+firge35_half_width=618
+firge35_full_width=$((${firge35_half_width} * 5 / 3))
 
 # Set path to fontforge command
 fontforge_command="fontforge"
@@ -139,35 +139,35 @@ modified_genjyuu35_console_generator="modified_genjyuu35_console_generator.pe"
 modified_genjyuu35_console_regular="Modified-GenJyuuGothicL35-Monospace-regular_console.sfd"
 modified_genjyuu35_console_bold="Modified-GenJyuuGothicL35-Monospace-bold_console.sfd"
 
-modified_hackgen_nerd_symbol_generator="modified_hackgen_nerd_symbol_generator.pe"
-modified_hackgen_nerd_symbol_regular="Modified-HackGen-Nerd-Symbol-Regular.sfd"
-modified_hackgen_nerd_symbol_bold="Modified-HackGen-Nerd-Symbol-Bold.sfd"
+modified_firge_nerd_symbol_generator="modified_firge_nerd_symbol_generator.pe"
+modified_firge_nerd_symbol_regular="Modified-Firge-Nerd-Symbol-Regular.sfd"
+modified_firge_nerd_symbol_bold="Modified-Firge-Nerd-Symbol-Bold.sfd"
 
-modified_hackgen35_nerd_symbol_generator="modified_hackgen35_nerd_symbol_generator.pe"
-modified_hackgen35_nerd_symbol_regular="Modified-HackGen35-Nerd-Symbol-Regular.sfd"
-modified_hackgen35_nerd_symbol_bold="Modified-HackGen35-Nerd-Symbol-Bold.sfd"
+modified_firge35_nerd_symbol_generator="modified_firge35_nerd_symbol_generator.pe"
+modified_firge35_nerd_symbol_regular="Modified-Firge35-Nerd-Symbol-Regular.sfd"
+modified_firge35_nerd_symbol_bold="Modified-Firge35-Nerd-Symbol-Bold.sfd"
 
-modified_hackgen_nerd_console_symbol_generator="modified_hackgen_nerd_console_symbol_generator.pe"
-modified_hackgen_nerd_console_symbol_regular="Modified-HackGen-Nerd-Console-Symbol-Regular.sfd"
-modified_hackgen_nerd_console_symbol_bold="Modified-HackGen-Nerd-Console-Symbol-Bold.sfd"
+modified_firge_nerd_console_symbol_generator="modified_firge_nerd_console_symbol_generator.pe"
+modified_firge_nerd_console_symbol_regular="Modified-Firge-Nerd-Console-Symbol-Regular.sfd"
+modified_firge_nerd_console_symbol_bold="Modified-Firge-Nerd-Console-Symbol-Bold.sfd"
 
-modified_hackgen35_nerd_console_symbol_generator="modified_hackgen35_nerd_console_symbol_generator.pe"
-modified_hackgen35_nerd_console_symbol_regular="Modified-HackGen35-Nerd-Console-Symbol-Regular.sfd"
-modified_hackgen35_nerd_console_symbol_bold="Modified-HackGen35-Nerd-Console-Symbol-Bold.sfd"
+modified_firge35_nerd_console_symbol_generator="modified_firge35_nerd_console_symbol_generator.pe"
+modified_firge35_nerd_console_symbol_regular="Modified-Firge35-Nerd-Console-Symbol-Regular.sfd"
+modified_firge35_nerd_console_symbol_bold="Modified-Firge35-Nerd-Console-Symbol-Bold.sfd"
 
-hackgen_generator="hackgen_generator.pe"
-hackgen_console_generator="hackgen_console_generator.pe"
-hackgen_evacuate_from_hinting_generator="hackgen_evacuate_from_hinting_generator.pe"
-hackgen_box_drawing_light_generator="hackgen_box_drawing_light_generator.pe"
-hackgen_nerd_symbol_generator="hackgen_nerd_symbol_generator.pe"
-hackgen_nerd_console_symbol_generator="hackgen_nerd_console_symbol_generator.pe"
+firge_generator="firge_generator.pe"
+firge_console_generator="firge_console_generator.pe"
+firge_evacuate_from_hinting_generator="firge_evacuate_from_hinting_generator.pe"
+firge_box_drawing_light_generator="firge_box_drawing_light_generator.pe"
+firge_nerd_symbol_generator="firge_nerd_symbol_generator.pe"
+firge_nerd_console_symbol_generator="firge_nerd_console_symbol_generator.pe"
 
-hackgen35_generator="hackgen35_generator.pe"
-hackgen35_console_generator="hackgen35_console_generator.pe"
-hackgen35_evacuate_from_hinting_generator="hackgen35_evacuate_from_hinting_generator.pe"
-hackgen35_box_drawing_light_generator="hackgen35_box_drawing_light_generator.pe"
-hackgen35_nerd_symbol_generator="hackgen35_nerd_symbol_generator.pe"
-hackgen35_nerd_console_symbol_generator="hackgen35_nerd_console_symbol_generator.pe"
+firge35_generator="firge35_generator.pe"
+firge35_console_generator="firge35_console_generator.pe"
+firge35_evacuate_from_hinting_generator="firge35_evacuate_from_hinting_generator.pe"
+firge35_box_drawing_light_generator="firge35_box_drawing_light_generator.pe"
+firge35_nerd_symbol_generator="firge35_nerd_symbol_generator.pe"
+firge35_nerd_console_symbol_generator="firge35_nerd_console_symbol_generator.pe"
 
 # Get input fonts
 tmp=""
@@ -243,9 +243,9 @@ fi
 # Make temporary directory
 if [ -w "/tmp" -a "${leaving_tmp_flag}" = "false" ]
 then
-  tmpdir=`mktemp -d /tmp/hackgen_generator_tmpdir.XXXXXX` || exit 2
+  tmpdir=`mktemp -d /tmp/firge_generator_tmpdir.XXXXXX` || exit 2
 else
-  tmpdir=`mktemp -d ./hackgen_generator_tmpdir.XXXXXX`    || exit 2
+  tmpdir=`mktemp -d ./firge_generator_tmpdir.XXXXXX`    || exit 2
 fi
 
 # Remove temporary directory by trapping
@@ -489,13 +489,13 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for extracting evacuation symbol from hinting for HackGen
+# Generate script for extracting evacuation symbol from hinting for Firge
 ########################################
 
 cat > ${tmpdir}/${modified_hack_evacuate_from_hinting_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate evacuation symbol from hinting for HackGen")
+Print("Generate evacuation symbol from hinting for Firge")
 
 # Set parameters
 input_list  = ["${tmpdir}/${modified_hack_material_regular}", "${tmpdir}/${modified_hack_material_bold}"]
@@ -513,8 +513,8 @@ while (i < SizeOf(input_list))
   Scale(${hack_shrink_x}, ${hack_shrink_y}, 0, 0)
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
-  width_pt = ${hackgen_half_width}
+  move_pt = $(((${firge_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
+  width_pt = ${firge_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -539,13 +539,13 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for extracting evacuation symbol from hinting for HackGen35
+# Generate script for extracting evacuation symbol from hinting for Firge35
 ########################################
 
 cat > ${tmpdir}/${modified_hack35_evacuate_from_hinting_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate evacuation symbol from hinting for HackGen")
+Print("Generate evacuation symbol from hinting for Firge")
 
 # Set parameters
 input_list  = ["${tmpdir}/${modified_hack_material_regular}", "${tmpdir}/${modified_hack_material_bold}"]
@@ -561,8 +561,8 @@ while (i < SizeOf(input_list))
   UnlinkReference()
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen35_half_width} - ${hack_width}) / 2)) # -8
-  width_pt = ${hackgen35_half_width}
+  move_pt = $(((${firge35_half_width} - ${hack_width}) / 2)) # -8
+  width_pt = ${firge35_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -587,13 +587,13 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction powerline symbol script for HackGen
+# Generate extraction powerline symbol script for Firge
 ########################################
 
 cat > ${tmpdir}/${modified_hack_powerline_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate powerline symbol for HackGen")
+Print("Generate powerline symbol for Firge")
 
 # Set parameters
 input_list  = ["${input_nerd_patched_hack_mono_regular}",    "${input_nerd_patched_hack_mono_bold}"]
@@ -624,8 +624,8 @@ while (i < SizeOf(input_list))
   Scale(100, 105, 0, 0)
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
-  width_pt = ${hackgen_half_width}
+  move_pt = $(((${firge_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
+  width_pt = ${firge_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -643,13 +643,13 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction powerline symbol script for HackGen35
+# Generate extraction powerline symbol script for Firge35
 ########################################
 
 cat > ${tmpdir}/${modified_hack35_powerline_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate powerline symbol for HackGen35")
+Print("Generate powerline symbol for Firge35")
 
 # Set parameters
 input_list  = ["${input_nerd_patched_hack_mono_regular}",    "${input_nerd_patched_hack_mono_bold}"]
@@ -673,8 +673,8 @@ while (i < SizeOf(input_list))
   ScaleToEm(${em_ascent}, ${em_descent})
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen35_half_width} - ${hack_width}) / 2)) # -8
-  width_pt = ${hackgen35_half_width}
+  move_pt = $(((${firge35_half_width} - ${hack_width}) / 2)) # -8
+  width_pt = ${firge35_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -693,17 +693,17 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction Nerd Fonts script for HackGen
+# Generate extraction Nerd Fonts script for Firge
 ########################################
 
-cat > ${tmpdir}/${modified_hackgen_nerd_symbol_generator} << _EOT_
+cat > ${tmpdir}/${modified_firge_nerd_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate Nerd Fonts symbol for HackGen")
+Print("Generate Nerd Fonts symbol for Firge")
 
 # Set parameters
 input_list  = ["${input_nerd_patched_hack_regular}",    "${input_nerd_patched_hack_bold}"]
-output_list = ["${modified_hackgen_nerd_symbol_regular}", "${modified_hackgen_nerd_symbol_bold}"]
+output_list = ["${modified_firge_nerd_symbol_regular}", "${modified_firge_nerd_symbol_bold}"]
 
 # Begin loop of regular and bold
 i = 0
@@ -718,8 +718,8 @@ while (i < SizeOf(input_list))
   Scale(${hack_shrink_x}, ${hack_shrink_y}, 0, 0)
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
-  width_pt = ${hackgen_full_width}
+  move_pt = $(((${firge_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
+  width_pt = ${firge_full_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -744,17 +744,17 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction Nerd Fonts script for HackGen35 symbols
+# Generate extraction Nerd Fonts script for Firge35 symbols
 ########################################
 
-cat > ${tmpdir}/${modified_hackgen35_nerd_symbol_generator} << _EOT_
+cat > ${tmpdir}/${modified_firge35_nerd_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate Nerd Fonts symbol for HackGen35")
+Print("Generate Nerd Fonts symbol for Firge35")
 
 # Set parameters
 input_list  = ["${input_nerd_patched_hack_regular}",    "${input_nerd_patched_hack_bold}"]
-output_list = ["${modified_hackgen35_nerd_symbol_regular}", "${modified_hackgen35_nerd_symbol_bold}"]
+output_list = ["${modified_firge35_nerd_symbol_regular}", "${modified_firge35_nerd_symbol_bold}"]
 
 # Begin loop of regular and bold
 i = 0
@@ -767,8 +767,8 @@ while (i < SizeOf(input_list))
   ScaleToEm(${em_ascent}, ${em_descent})
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen35_half_width} - ${hack_width}) / 2)) # -8
-  width_pt = ${hackgen35_full_width}
+  move_pt = $(((${firge35_half_width} - ${hack_width}) / 2)) # -8
+  width_pt = ${firge35_full_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -793,13 +793,13 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for box drawing light for HackGen
+# Generate script for box drawing light for Firge
 ########################################
 
 cat > ${tmpdir}/${modified_hack_box_drawing_light_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate box drawing light for HackGen")
+Print("Generate box drawing light for Firge")
 
 # Set parameters
 input_list  = ["${tmpdir}/${modified_hack_material_regular}", "${tmpdir}/${modified_hack_material_bold}"]
@@ -817,8 +817,8 @@ while (i < SizeOf(input_list))
   Scale(${hack_shrink_x}, ${hack_shrink_y}, 0, 0)
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
-  width_pt = ${hackgen_half_width}
+  move_pt = $(((${firge_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
+  width_pt = ${firge_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -843,13 +843,13 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for box drawing light from hinting for HackGen35
+# Generate script for box drawing light from hinting for Firge35
 ########################################
 
 cat > ${tmpdir}/${modified_hack35_box_drawing_light_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate box drawing light for HackGen")
+Print("Generate box drawing light for Firge")
 
 # Set parameters
 input_list  = ["${tmpdir}/${modified_hack_material_regular}", "${tmpdir}/${modified_hack_material_bold}"]
@@ -865,8 +865,8 @@ while (i < SizeOf(input_list))
   UnlinkReference()
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen35_half_width} - ${hack_width}) / 2)) # -8
-  width_pt = ${hackgen35_half_width}
+  move_pt = $(((${firge35_half_width} - ${hack_width}) / 2)) # -8
+  width_pt = ${firge35_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -891,17 +891,17 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction Nerd Fonts script for HackGen Console
+# Generate extraction Nerd Fonts script for Firge Console
 ########################################
 
-cat > ${tmpdir}/${modified_hackgen_nerd_console_symbol_generator} << _EOT_
+cat > ${tmpdir}/${modified_firge_nerd_console_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate Nerd Fonts symbol for HackGen")
+Print("Generate Nerd Fonts symbol for Firge")
 
 # Set parameters
 input_list  = ["${input_nerd_patched_hack_regular}",    "${input_nerd_patched_hack_bold}"]
-output_list = ["${modified_hackgen_nerd_console_symbol_regular}", "${modified_hackgen_nerd_console_symbol_bold}"]
+output_list = ["${modified_firge_nerd_console_symbol_regular}", "${modified_firge_nerd_console_symbol_bold}"]
 
 # Begin loop of regular and bold
 i = 0
@@ -923,8 +923,8 @@ while (i < SizeOf(input_list))
   Scale(${hack_shrink_x}, ${hack_shrink_y}, 0, 0)
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
-  width_pt = ${hackgen_half_width}
+  move_pt = $(((${firge_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
+  width_pt = ${firge_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -943,17 +943,17 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction Nerd Fonts script for HackGen35 Console
+# Generate extraction Nerd Fonts script for Firge35 Console
 ########################################
 
-cat > ${tmpdir}/${modified_hackgen35_nerd_console_symbol_generator} << _EOT_
+cat > ${tmpdir}/${modified_firge35_nerd_console_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
-Print("Generate Nerd Fonts symbol for HackGen35")
+Print("Generate Nerd Fonts symbol for Firge35")
 
 # Set parameters
 input_list  = ["${input_nerd_patched_hack_regular}",    "${input_nerd_patched_hack_bold}"]
-output_list = ["${modified_hackgen35_nerd_console_symbol_regular}", "${modified_hackgen35_nerd_console_symbol_bold}"]
+output_list = ["${modified_firge35_nerd_console_symbol_regular}", "${modified_firge35_nerd_console_symbol_bold}"]
 
 # Begin loop of regular and bold
 i = 0
@@ -975,8 +975,8 @@ while (i < SizeOf(input_list))
   Scale(${hack_shrink_x}, ${hack_shrink_y}, 0, 0)
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen35_half_width} - ${hack_width}) / 2)) # -8
-  width_pt = ${hackgen35_half_width}
+  move_pt = $(((${firge35_half_width} - ${hack_width}) / 2)) # -8
+  width_pt = ${firge35_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -1019,8 +1019,8 @@ while (i < SizeOf(input_list))
   Scale(${hack_shrink_x}, ${hack_shrink_y}, 0, 0)
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
-  width_pt = ${hackgen_half_width}
+  move_pt = $(((${firge_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
+  width_pt = ${firge_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -1067,8 +1067,8 @@ while (i < SizeOf(input_list))
   UnlinkReference()
 
   # 幅の変更 (Move で文字幅も変わることに注意)
-  move_pt = $(((${hackgen35_half_width} - ${hack_width}) / 2)) # -8
-  width_pt = ${hackgen35_half_width}
+  move_pt = $(((${firge35_half_width} - ${hack_width}) / 2)) # -8
+  width_pt = ${firge35_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
@@ -1236,8 +1236,8 @@ while (i < SizeOf(input_list))
   Print("Half width check loop end")
 
   Print("Full SetWidth start")
-  move_pt = $(((${hackgen_full_width} - ${genjyuu_width}) / 2)) # 26
-  width_pt = ${hackgen_full_width} # 1076
+  move_pt = $(((${firge_full_width} - ${genjyuu_width}) / 2)) # 26
+  width_pt = ${firge_full_width} # 1076
   SelectWorthOutputting()
   ii=0
   while (ii < i_halfwidth)
@@ -1251,8 +1251,8 @@ while (i < SizeOf(input_list))
   SelectNone()
 
   Print("Half SetWidth start")
-  move_pt = $(((${hackgen_half_width} - ${genjyuu_width} / 2) / 2)) # 13
-  width_pt = ${hackgen_half_width} # 358
+  move_pt = $(((${firge_half_width} - ${genjyuu_width} / 2) / 2)) # 13
+  width_pt = ${firge_half_width} # 358
   ii=0
   while (ii < i_halfwidth)
       SelectMore(halfwidth_array[ii])
@@ -1279,21 +1279,21 @@ while (i < SizeOf(input_list))
 
   # Edit zenkaku brackets
   Print("Edit zenkaku brackets")
-  bracket_move = $((${hackgen_half_width} / 2 + ${hackgen_half_width} / 30))
-  Select(0uff08); Move(-bracket_move, 0); SetWidth(${hackgen_full_width}) # (
-  Select(0uff09); Move( bracket_move, 0); SetWidth(${hackgen_full_width}) # )
-  Select(0uff3b); Move(-bracket_move, 0); SetWidth(${hackgen_full_width}) # [
-  Select(0uff3d); Move( bracket_move, 0); SetWidth(${hackgen_full_width}) # ]
-  Select(0uff5b); Move(-bracket_move, 0); SetWidth(${hackgen_full_width}) # {
-  Select(0uff5d); Move( bracket_move, 0); SetWidth(${hackgen_full_width}) # }
+  bracket_move = $((${firge_half_width} / 2 + ${firge_half_width} / 30))
+  Select(0uff08); Move(-bracket_move, 0); SetWidth(${firge_full_width}) # (
+  Select(0uff09); Move( bracket_move, 0); SetWidth(${firge_full_width}) # )
+  Select(0uff3b); Move(-bracket_move, 0); SetWidth(${firge_full_width}) # [
+  Select(0uff3d); Move( bracket_move, 0); SetWidth(${firge_full_width}) # ]
+  Select(0uff5b); Move(-bracket_move, 0); SetWidth(${firge_full_width}) # {
+  Select(0uff5d); Move( bracket_move, 0); SetWidth(${firge_full_width}) # }
 
   # 全角 ，．‘’“” の調整
-  Select(0uff0e);Scale(155) ; SetWidth(${hackgen_full_width}) # ．
-  Select(0uff0c);Scale(145) ; SetWidth(${hackgen_full_width}) # ，
-  Select(0u2018);Scale(145) ; SetWidth(${hackgen_full_width}) # ‘
-  Select(0u2019);Scale(145) ; SetWidth(${hackgen_full_width}) # ’
-  Select(0u201c);Scale(145) ; SetWidth(${hackgen_full_width}) # “
-  Select(0u201d);Scale(145) ; SetWidth(${hackgen_full_width}) # ”
+  Select(0uff0e);Scale(155) ; SetWidth(${firge_full_width}) # ．
+  Select(0uff0c);Scale(145) ; SetWidth(${firge_full_width}) # ，
+  Select(0u2018);Scale(145) ; SetWidth(${firge_full_width}) # ‘
+  Select(0u2019);Scale(145) ; SetWidth(${firge_full_width}) # ’
+  Select(0u201c);Scale(145) ; SetWidth(${firge_full_width}) # “
+  Select(0u201d);Scale(145) ; SetWidth(${firge_full_width}) # ”
 
   # 下限で見切れているグリフの調整
   Select(0uff47); Scale(100, 91) # ｇ
@@ -1323,13 +1323,13 @@ while (i < SizeOf(input_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen_ascent})
-  SetOS2Value("WinDescent",            ${hackgen_descent})
+  SetOS2Value("WinAscent",             ${firge_ascent})
+  SetOS2Value("WinDescent",            ${firge_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen_descent})
+  SetOS2Value("HHeadAscent",           ${firge_ascent})
+  SetOS2Value("HHeadDescent",         -${firge_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -1344,7 +1344,7 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for modified GenJyuuGothicL for HackGen35
+# Generate script for modified GenJyuuGothicL for Firge35
 ########################################
 
 cat > ${tmpdir}/${modified_genjyuu35_generator} << _EOT_
@@ -1416,8 +1416,8 @@ while (i < SizeOf(input_list))
   Print("Half width check loop end")
 
   Print("Full SetWidth start")
-  move_pt = $(((${hackgen35_full_width} - ${genjyuu_width}) / 2)) # 3
-  width_pt = ${hackgen35_full_width} # 1030
+  move_pt = $(((${firge35_full_width} - ${genjyuu_width}) / 2)) # 3
+  width_pt = ${firge35_full_width} # 1030
   SelectWorthOutputting()
   ii=0
   while (ii < i_halfwidth)
@@ -1431,8 +1431,8 @@ while (i < SizeOf(input_list))
   SelectNone()
 
   Print("Half SetWidth start")
-  move_pt = $(((${hackgen35_half_width} - ${genjyuu_width} / 2) / 2)) # 35
-  width_pt = ${hackgen35_half_width} # 618
+  move_pt = $(((${firge35_half_width} - ${genjyuu_width} / 2) / 2)) # 35
+  width_pt = ${firge35_half_width} # 618
   ii=0
   while (ii < i_halfwidth)
       SelectMore(halfwidth_array[ii])
@@ -1459,21 +1459,21 @@ while (i < SizeOf(input_list))
 
   # Edit zenkaku brackets
   Print("Edit zenkaku brackets")
-  bracket_move = $((${hackgen35_half_width} / 2 + ${hackgen35_half_width} / 30))
-  Select(0uff08); Move(-bracket_move, 0); SetWidth(${hackgen35_full_width}) # (
-  Select(0uff09); Move( bracket_move, 0); SetWidth(${hackgen35_full_width}) # )
-  Select(0uff3b); Move(-bracket_move, 0); SetWidth(${hackgen35_full_width}) # [
-  Select(0uff3d); Move( bracket_move, 0); SetWidth(${hackgen35_full_width}) # ]
-  Select(0uff5b); Move(-bracket_move, 0); SetWidth(${hackgen35_full_width}) # {
-  Select(0uff5d); Move( bracket_move, 0); SetWidth(${hackgen35_full_width}) # }
+  bracket_move = $((${firge35_half_width} / 2 + ${firge35_half_width} / 30))
+  Select(0uff08); Move(-bracket_move, 0); SetWidth(${firge35_full_width}) # (
+  Select(0uff09); Move( bracket_move, 0); SetWidth(${firge35_full_width}) # )
+  Select(0uff3b); Move(-bracket_move, 0); SetWidth(${firge35_full_width}) # [
+  Select(0uff3d); Move( bracket_move, 0); SetWidth(${firge35_full_width}) # ]
+  Select(0uff5b); Move(-bracket_move, 0); SetWidth(${firge35_full_width}) # {
+  Select(0uff5d); Move( bracket_move, 0); SetWidth(${firge35_full_width}) # }
 
   # 全角 ，．‘’“” の調整
-  Select(0uff0e);Scale(155) ; SetWidth(${hackgen35_full_width}) # ．
-  Select(0uff0c);Scale(145) ; SetWidth(${hackgen35_full_width}) # ，
-  Select(0u2018);Scale(145) ; SetWidth(${hackgen35_full_width}) # ‘
-  Select(0u2019);Scale(145) ; SetWidth(${hackgen35_full_width}) # ’
-  Select(0u201c);Scale(145) ; SetWidth(${hackgen35_full_width}) # “
-  Select(0u201d);Scale(145) ; SetWidth(${hackgen35_full_width}) # ”
+  Select(0uff0e);Scale(155) ; SetWidth(${firge35_full_width}) # ．
+  Select(0uff0c);Scale(145) ; SetWidth(${firge35_full_width}) # ，
+  Select(0u2018);Scale(145) ; SetWidth(${firge35_full_width}) # ‘
+  Select(0u2019);Scale(145) ; SetWidth(${firge35_full_width}) # ’
+  Select(0u201c);Scale(145) ; SetWidth(${firge35_full_width}) # “
+  Select(0u201d);Scale(145) ; SetWidth(${firge35_full_width}) # ”
 
   # Save modified GenJyuuGothicL
   Print("Save " + output_list[i])
@@ -1499,13 +1499,13 @@ while (i < SizeOf(input_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen35_ascent})
-  SetOS2Value("WinDescent",            ${hackgen35_descent})
+  SetOS2Value("WinAscent",             ${firge35_ascent})
+  SetOS2Value("WinDescent",            ${firge35_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen35_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen35_descent})
+  SetOS2Value("HHeadAscent",           ${firge35_ascent})
+  SetOS2Value("HHeadDescent",         -${firge35_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -1577,9 +1577,9 @@ while (i < SizeOf(input_list))
 
   # 結合分音記号は全て源柔ゴシック収録のものを使用する
   Select(0u0300, 0u036f)
-  move_pt = $(((${hackgen_half_width} - ${hackgen_full_width}) / 2))
+  move_pt = $(((${firge_half_width} - ${firge_full_width}) / 2))
   Move(move_pt, 0)
-  SetWidth(${hackgen_half_width}, 0)
+  SetWidth(${firge_half_width}, 0)
 
   # Save modified GenJyuuGothicL
   Print("Generate " + output_list[i])
@@ -1593,7 +1593,7 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for modified GenJyuuGothicL Console for HackGen35
+# Generate script for modified GenJyuuGothicL Console for Firge35
 ########################################
 
 cat > ${tmpdir}/${modified_genjyuu35_console_generator} << _EOT_
@@ -1650,9 +1650,9 @@ while (i < SizeOf(input_list))
 
   # 結合分音記号は全て源柔ゴシック収録のものを使用する
   Select(0u0300, 0u036f)
-  move_pt = $(((${hackgen35_half_width} - ${hackgen35_full_width}) / 2))
+  move_pt = $(((${firge35_half_width} - ${firge35_full_width}) / 2))
   Move(move_pt, 0)
-  SetWidth(${hackgen35_half_width}, 0)
+  SetWidth(${firge35_half_width}, 0)
 
   # Save modified GenJyuuGothicL
   Print("Generate " + output_list[i])
@@ -1666,25 +1666,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for HackGen
+# Generate script for Firge
 ########################################
 
-cat > ${tmpdir}/${hackgen_generator} << _EOT_
+cat > ${tmpdir}/${firge_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate HackGen")
+Print("Generate Firge")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack_regular}", \\
                      "${tmpdir}/${modified_hack_bold}"]
-fontfamily        = "${hackgen_familyname}"
-fontfamilysuffix  = "${hackgen_familyname_suffix}"
+fontfamily        = "${firge_familyname}"
+fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -1723,13 +1723,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen_ascent})
-  SetOS2Value("WinDescent",            ${hackgen_descent})
+  SetOS2Value("WinAscent",             ${firge_ascent})
+  SetOS2Value("WinDescent",            ${firge_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen_descent})
+  SetOS2Value("HHeadAscent",           ${firge_ascent})
+  SetOS2Value("HHeadDescent",         -${firge_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -1737,7 +1737,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -1754,27 +1754,27 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction nerd symbols script for HackGen
+# Generate extraction nerd symbols script for Firge
 ########################################
 
-cat > ${tmpdir}/${hackgen_nerd_symbol_generator} << _EOT_
+cat > ${tmpdir}/${firge_nerd_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction nerd symbols script for HackGen")
+Print("Generate extraction nerd symbols script for Firge")
 
 # Set parameters
-hack_list  = ["${tmpdir}/${modified_hackgen_nerd_symbol_regular}", \\
-                     "${tmpdir}/${modified_hackgen_nerd_symbol_bold}"]
+hack_list  = ["${tmpdir}/${modified_firge_nerd_symbol_regular}", \\
+                     "${tmpdir}/${modified_firge_nerd_symbol_bold}"]
 powerline_list = ["${tmpdir}/${modified_hack_powerline_regular}", \\
                       "${tmpdir}/${modified_hack_powerline_bold}"]
-fontfamily        = "${hackgen_evacuation_nerd_familyname}"
-fontfamilysuffix  = "${hackgen_familyname_suffix}"
+fontfamily        = "${firge_evacuation_nerd_familyname}"
+fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -1813,13 +1813,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen_ascent})
-  SetOS2Value("WinDescent",            ${hackgen_descent})
+  SetOS2Value("WinAscent",             ${firge_ascent})
+  SetOS2Value("WinDescent",            ${firge_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen_descent})
+  SetOS2Value("HHeadAscent",           ${firge_ascent})
+  SetOS2Value("HHeadDescent",         -${firge_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -1828,7 +1828,7 @@ while (i < SizeOf(fontstyle_list))
   MergeFonts(hack_list[i])
   MergeFonts(powerline_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -1845,27 +1845,27 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction nerd symbols script for HackGen35
+# Generate extraction nerd symbols script for Firge35
 ########################################
 
-cat > ${tmpdir}/${hackgen35_nerd_symbol_generator} << _EOT_
+cat > ${tmpdir}/${firge35_nerd_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction nerd symbols script for HackGen35")
+Print("Generate extraction nerd symbols script for Firge35")
 
 # Set parameters
-hack_list  = ["${tmpdir}/${modified_hackgen35_nerd_symbol_regular}", \\
-                     "${tmpdir}/${modified_hackgen35_nerd_symbol_bold}"]
+hack_list  = ["${tmpdir}/${modified_firge35_nerd_symbol_regular}", \\
+                     "${tmpdir}/${modified_firge35_nerd_symbol_bold}"]
 powerline_list = ["${tmpdir}/${modified_hack35_powerline_regular}", \\
                       "${tmpdir}/${modified_hack35_powerline_bold}"]
-fontfamily        = "${hackgen35_evacuation_nerd_familyname}"
-fontfamilysuffix  = "${hackgen35_familyname_suffix}"
+fontfamily        = "${firge35_evacuation_nerd_familyname}"
+fontfamilysuffix  = "${firge35_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -1904,13 +1904,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen35_ascent})
-  SetOS2Value("WinDescent",            ${hackgen35_descent})
+  SetOS2Value("WinAscent",             ${firge35_ascent})
+  SetOS2Value("WinDescent",            ${firge35_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen35_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen35_descent})
+  SetOS2Value("HHeadAscent",           ${firge35_ascent})
+  SetOS2Value("HHeadDescent",         -${firge35_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -1919,7 +1919,7 @@ while (i < SizeOf(fontstyle_list))
   MergeFonts(hack_list[i])
   MergeFonts(powerline_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -1936,27 +1936,27 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction nerd symbols script for HackGen Console
+# Generate extraction nerd symbols script for Firge Console
 ########################################
 
-cat > ${tmpdir}/${hackgen_nerd_console_symbol_generator} << _EOT_
+cat > ${tmpdir}/${firge_nerd_console_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction nerd symbols script for HackGen")
+Print("Generate extraction nerd symbols script for Firge")
 
 # Set parameters
-hack_list  = ["${tmpdir}/${modified_hackgen_nerd_console_symbol_regular}", \\
-                     "${tmpdir}/${modified_hackgen_nerd_console_symbol_bold}"]
+hack_list  = ["${tmpdir}/${modified_firge_nerd_console_symbol_regular}", \\
+                     "${tmpdir}/${modified_firge_nerd_console_symbol_bold}"]
 powerline_list = ["${tmpdir}/${modified_hack_powerline_regular}", \\
                       "${tmpdir}/${modified_hack_powerline_bold}"]
-fontfamily        = "${hackgen_evacuation_nerd_familyname}"
-fontfamilysuffix  = "${hackgen_console_suffix}"
+fontfamily        = "${firge_evacuation_nerd_familyname}"
+fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -1995,13 +1995,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen_ascent})
-  SetOS2Value("WinDescent",            ${hackgen_descent})
+  SetOS2Value("WinAscent",             ${firge_ascent})
+  SetOS2Value("WinDescent",            ${firge_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen_descent})
+  SetOS2Value("HHeadAscent",           ${firge_ascent})
+  SetOS2Value("HHeadDescent",         -${firge_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2010,7 +2010,7 @@ while (i < SizeOf(fontstyle_list))
   MergeFonts(hack_list[i])
   MergeFonts(powerline_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2027,27 +2027,27 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction nerd symbols script for HackGen35 Console
+# Generate extraction nerd symbols script for Firge35 Console
 ########################################
 
-cat > ${tmpdir}/${hackgen35_nerd_console_symbol_generator} << _EOT_
+cat > ${tmpdir}/${firge35_nerd_console_symbol_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction nerd symbols script for HackGen35")
+Print("Generate extraction nerd symbols script for Firge35")
 
 # Set parameters
-hack_list  = ["${tmpdir}/${modified_hackgen35_nerd_console_symbol_regular}", \\
-                     "${tmpdir}/${modified_hackgen35_nerd_console_symbol_bold}"]
+hack_list  = ["${tmpdir}/${modified_firge35_nerd_console_symbol_regular}", \\
+                     "${tmpdir}/${modified_firge35_nerd_console_symbol_bold}"]
 powerline_list = ["${tmpdir}/${modified_hack35_powerline_regular}", \\
                       "${tmpdir}/${modified_hack35_powerline_bold}"]
-fontfamily        = "${hackgen35_evacuation_nerd_familyname}"
-fontfamilysuffix  = "${hackgen_console_suffix}"
+fontfamily        = "${firge35_evacuation_nerd_familyname}"
+fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2086,13 +2086,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen35_ascent})
-  SetOS2Value("WinDescent",            ${hackgen35_descent})
+  SetOS2Value("WinAscent",             ${firge35_ascent})
+  SetOS2Value("WinDescent",            ${firge35_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen35_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen35_descent})
+  SetOS2Value("HHeadAscent",           ${firge35_ascent})
+  SetOS2Value("HHeadDescent",         -${firge35_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2101,7 +2101,7 @@ while (i < SizeOf(fontstyle_list))
   MergeFonts(hack_list[i])
   MergeFonts(powerline_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2118,25 +2118,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction evacuation symbol from hinting for HackGen
+# Generate extraction evacuation symbol from hinting for Firge
 ########################################
 
-cat > ${tmpdir}/${hackgen_evacuate_from_hinting_generator} << _EOT_
+cat > ${tmpdir}/${firge_evacuate_from_hinting_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction evacuation symbol from hinting for HackGen")
+Print("Generate extraction evacuation symbol from hinting for Firge")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack_evacuate_from_hinting_regular}", \\
                      "${tmpdir}/${modified_hack_evacuate_from_hinting_bold}"]
-fontfamily        = "${hackgen_evacuation_symbol_familyname}"
-fontfamilysuffix  = "${hackgen_familyname_suffix}"
+fontfamily        = "${firge_evacuation_symbol_familyname}"
+fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2175,13 +2175,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen_ascent})
-  SetOS2Value("WinDescent",            ${hackgen_descent})
+  SetOS2Value("WinAscent",             ${firge_ascent})
+  SetOS2Value("WinDescent",            ${firge_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen_descent})
+  SetOS2Value("HHeadAscent",           ${firge_ascent})
+  SetOS2Value("HHeadDescent",         -${firge_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2189,7 +2189,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2206,25 +2206,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction evacuation symbol from hinting for HackGen35
+# Generate extraction evacuation symbol from hinting for Firge35
 ########################################
 
-cat > ${tmpdir}/${hackgen35_evacuate_from_hinting_generator} << _EOT_
+cat > ${tmpdir}/${firge35_evacuate_from_hinting_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction evacuation symbol from hinting for HackGen35")
+Print("Generate extraction evacuation symbol from hinting for Firge35")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack35_evacuate_from_hinting_regular}", \\
                      "${tmpdir}/${modified_hack35_evacuate_from_hinting_bold}"]
-fontfamily        = "${hackgen35_evacuation_symbol_familyname}"
-fontfamilysuffix  = "${hackgen_familyname_suffix}"
+fontfamily        = "${firge35_evacuation_symbol_familyname}"
+fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2263,13 +2263,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen35_ascent})
-  SetOS2Value("WinDescent",            ${hackgen35_descent})
+  SetOS2Value("WinAscent",             ${firge35_ascent})
+  SetOS2Value("WinDescent",            ${firge35_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen35_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen35_descent})
+  SetOS2Value("HHeadAscent",           ${firge35_ascent})
+  SetOS2Value("HHeadDescent",         -${firge35_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2277,7 +2277,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2294,25 +2294,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction box drawing light for HackGen
+# Generate extraction box drawing light for Firge
 ########################################
 
-cat > ${tmpdir}/${hackgen_box_drawing_light_generator} << _EOT_
+cat > ${tmpdir}/${firge_box_drawing_light_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction box drawing light for HackGen")
+Print("Generate extraction box drawing light for Firge")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack_box_drawing_light_regular}", \\
                      "${tmpdir}/${modified_hack_box_drawing_light_bold}"]
-fontfamily        = "${hackgen_box_drawing_light_familyname}"
-fontfamilysuffix  = "${hackgen_familyname_suffix}"
+fontfamily        = "${firge_box_drawing_light_familyname}"
+fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2351,13 +2351,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen_ascent})
-  SetOS2Value("WinDescent",            ${hackgen_descent})
+  SetOS2Value("WinAscent",             ${firge_ascent})
+  SetOS2Value("WinDescent",            ${firge_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen_descent})
+  SetOS2Value("HHeadAscent",           ${firge_ascent})
+  SetOS2Value("HHeadDescent",         -${firge_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2365,7 +2365,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2382,25 +2382,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate extraction box drawing light for HackGen35
+# Generate extraction box drawing light for Firge35
 ########################################
 
-cat > ${tmpdir}/${hackgen35_box_drawing_light_generator} << _EOT_
+cat > ${tmpdir}/${firge35_box_drawing_light_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate extraction box drawing light for HackGen35")
+Print("Generate extraction box drawing light for Firge35")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack35_box_drawing_light_regular}", \\
                      "${tmpdir}/${modified_hack35_box_drawing_light_bold}"]
-fontfamily        = "${hackgen35_box_drawing_light_familyname}"
-fontfamilysuffix  = "${hackgen_familyname_suffix}"
+fontfamily        = "${firge35_box_drawing_light_familyname}"
+fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2439,13 +2439,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen35_ascent})
-  SetOS2Value("WinDescent",            ${hackgen35_descent})
+  SetOS2Value("WinAscent",             ${firge35_ascent})
+  SetOS2Value("WinDescent",            ${firge35_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen35_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen35_descent})
+  SetOS2Value("HHeadAscent",           ${firge35_ascent})
+  SetOS2Value("HHeadDescent",         -${firge35_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2453,7 +2453,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2470,25 +2470,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for HackGen Console
+# Generate script for Firge Console
 ########################################
 
-cat > ${tmpdir}/${hackgen_console_generator} << _EOT_
+cat > ${tmpdir}/${firge_console_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate HackGen Console")
+Print("Generate Firge Console")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack_console_regular}", \\
                      "${tmpdir}/${modified_hack_console_bold}"]
-fontfamily        = "${hackgen_familyname}"
-fontfamilysuffix  = "${hackgen_console_suffix}"
+fontfamily        = "${firge_familyname}"
+fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2527,13 +2527,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen_ascent})
-  SetOS2Value("WinDescent",            ${hackgen_descent})
+  SetOS2Value("WinAscent",             ${firge_ascent})
+  SetOS2Value("WinDescent",            ${firge_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen_descent})
+  SetOS2Value("HHeadAscent",           ${firge_ascent})
+  SetOS2Value("HHeadDescent",         -${firge_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2541,7 +2541,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2558,25 +2558,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for HackGen35
+# Generate script for Firge35
 ########################################
 
-cat > ${tmpdir}/${hackgen35_generator} << _EOT_
+cat > ${tmpdir}/${firge35_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate HackGen")
+Print("Generate Firge")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack35_regular}", \\
                      "${tmpdir}/${modified_hack35_bold}"]
-fontfamily        = "${hackgen35_familyname}"
-fontfamilysuffix  = "${hackgen35_familyname_suffix}"
+fontfamily        = "${firge35_familyname}"
+fontfamilysuffix  = "${firge35_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2615,13 +2615,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen35_ascent})
-  SetOS2Value("WinDescent",            ${hackgen35_descent})
+  SetOS2Value("WinAscent",             ${firge35_ascent})
+  SetOS2Value("WinDescent",            ${firge35_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen35_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen35_descent})
+  SetOS2Value("HHeadAscent",           ${firge35_ascent})
+  SetOS2Value("HHeadDescent",         -${firge35_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2629,7 +2629,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2646,25 +2646,25 @@ Quit()
 _EOT_
 
 ########################################
-# Generate script for HackGen35 Console
+# Generate script for Firge35 Console
 ########################################
 
-cat > ${tmpdir}/${hackgen35_console_generator} << _EOT_
+cat > ${tmpdir}/${firge35_console_generator} << _EOT_
 #!$fontforge_command -script
 
 # Print message
-Print("Generate HackGen Console")
+Print("Generate Firge Console")
 
 # Set parameters
 hack_list  = ["${tmpdir}/${modified_hack35_console_regular}", \\
                      "${tmpdir}/${modified_hack35_console_bold}"]
-fontfamily        = "${hackgen35_familyname}"
-fontfamilysuffix  = "${hackgen_console_suffix}"
+fontfamily        = "${firge35_familyname}"
+fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
 copyright         = "Copyright (c) 2019, Yuko Otawara"
-version           = "${hackgen_version}"
+version           = "${firge_version}"
 
 # Begin loop of regular and bold
 i = 0
@@ -2703,13 +2703,13 @@ while (i < SizeOf(fontstyle_list))
   SetOS2Value("TypoDescentIsOffset",     0)
   SetOS2Value("HHeadAscentIsOffset",     0)
   SetOS2Value("HHeadDescentIsOffset",    0)
-  SetOS2Value("WinAscent",             ${hackgen35_ascent})
-  SetOS2Value("WinDescent",            ${hackgen35_descent})
+  SetOS2Value("WinAscent",             ${firge35_ascent})
+  SetOS2Value("WinDescent",            ${firge35_descent})
   SetOS2Value("TypoAscent",            ${em_ascent})
   SetOS2Value("TypoDescent",          -${em_descent})
   SetOS2Value("TypoLineGap",           ${typo_line_gap})
-  SetOS2Value("HHeadAscent",           ${hackgen35_ascent})
-  SetOS2Value("HHeadDescent",         -${hackgen35_descent})
+  SetOS2Value("HHeadAscent",           ${firge35_ascent})
+  SetOS2Value("HHeadDescent",         -${firge35_descent})
   SetOS2Value("HHeadLineGap",            0)
   SetPanose([2, 11, panoseweight_list[i], 9, 2, 2, 3, 2, 2, 7])
 
@@ -2717,7 +2717,7 @@ while (i < SizeOf(fontstyle_list))
   Print("Merge " + hack_list[i]:t)
   MergeFonts(hack_list[i])
 
-  # Save HackGen
+  # Save Firge
   if (fontfamilysuffix != "")
         Print("Save " + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf")
         Generate("${base_dir}/" + fontfamily + fontfamilysuffix + "-" + fontstyle_list[i] + ".ttf", "")
@@ -2734,7 +2734,7 @@ Quit()
 _EOT_
 
 ########################################
-# Generate HackGen
+# Generate Firge
 ########################################
 
 # Generate Material
@@ -2755,17 +2755,17 @@ $fontforge_command -script ${tmpdir}/${modified_genjyuu_generator} 2> $redirecti
 # Generate powerline Symbol
 # $fontforge_command -script ${tmpdir}/${modified_hack35_powerline_generator} 2> $redirection_stderr || exit 4
 
-# Generate Modified HackGen Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_hackgen_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Modified Firge Nerd Symbol
+# $fontforge_command -script ${tmpdir}/${modified_firge_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
-# Generate Modified HackGen Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_hackgen35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Modified Firge Nerd Symbol
+# $fontforge_command -script ${tmpdir}/${modified_firge35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
-# Generate Modified HackGen Console Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_hackgen_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Modified Firge Console Nerd Symbol
+# $fontforge_command -script ${tmpdir}/${modified_firge_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
-# Generate Modified HackGen Console Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_hackgen35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Modified Firge Console Nerd Symbol
+# $fontforge_command -script ${tmpdir}/${modified_firge35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Hack evacuation symbol
 # $fontforge_command -script ${tmpdir}/${modified_hack_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
@@ -2782,11 +2782,11 @@ $fontforge_command -script ${tmpdir}/${modified_hack35_box_drawing_light_generat
 # Generate Modified GenJyuu Console
 $fontforge_command -script ${tmpdir}/${modified_genjyuu_console_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen
-$fontforge_command -script ${tmpdir}/${hackgen_generator} 2> $redirection_stderr || exit 4
+# Generate Firge
+$fontforge_command -script ${tmpdir}/${firge_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen Console
-$fontforge_command -script ${tmpdir}/${hackgen_console_generator} 2> $redirection_stderr || exit 4
+# Generate Firge Console
+$fontforge_command -script ${tmpdir}/${firge_console_generator} 2> $redirection_stderr || exit 4
 
 # Generate Console - 35
 $fontforge_command -script ${tmpdir}/${modified_hack35_console_generator} 2> $redirection_stderr || exit 4
@@ -2800,53 +2800,53 @@ $fontforge_command -script ${tmpdir}/${modified_genjyuu35_generator} 2> $redirec
 # Generate Modified GenJyuu Console - 35
 $fontforge_command -script ${tmpdir}/${modified_genjyuu35_console_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen - 35
-$fontforge_command -script ${tmpdir}/${hackgen35_generator} 2> $redirection_stderr || exit 4
+# Generate Firge - 35
+$fontforge_command -script ${tmpdir}/${firge35_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen Console - 35
-$fontforge_command -script ${tmpdir}/${hackgen35_console_generator} 2> $redirection_stderr || exit 4
+# Generate Firge Console - 35
+$fontforge_command -script ${tmpdir}/${firge35_console_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${hackgen_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Firge Nerd Symbol
+#$fontforge_command -script ${tmpdir}/${firge_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen35 Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${hackgen35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Firge35 Nerd Symbol
+#$fontforge_command -script ${tmpdir}/${firge35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${hackgen_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Firge Nerd Symbol
+#$fontforge_command -script ${tmpdir}/${firge_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen35 Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${hackgen35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+# Generate Firge35 Nerd Symbol
+#$fontforge_command -script ${tmpdir}/${firge35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen evacuation symbol from hinting
-# $fontforge_command -script ${tmpdir}/${hackgen_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
+# Generate Firge evacuation symbol from hinting
+# $fontforge_command -script ${tmpdir}/${firge_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen35 evacuation symbol from hinting
-# $fontforge_command -script ${tmpdir}/${hackgen35_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
+# Generate Firge35 evacuation symbol from hinting
+# $fontforge_command -script ${tmpdir}/${firge35_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen box drawing light symbols from hinting
-$fontforge_command -script ${tmpdir}/${hackgen_box_drawing_light_generator} 2> $redirection_stderr || exit 4
+# Generate Firge box drawing light symbols from hinting
+$fontforge_command -script ${tmpdir}/${firge_box_drawing_light_generator} 2> $redirection_stderr || exit 4
 
-# Generate HackGen35 box drawing light symbols from hinting
-$fontforge_command -script ${tmpdir}/${hackgen35_box_drawing_light_generator} 2> $redirection_stderr || exit 4
+# Generate Firge35 box drawing light symbols from hinting
+$fontforge_command -script ${tmpdir}/${firge35_box_drawing_light_generator} 2> $redirection_stderr || exit 4
 
-# Add hinting HackGen Regular
-for f in ${hackgen_familyname}-Regular.ttf ${hackgen_familyname}${hackgen_console_suffix}-Regular.ttf
+# Add hinting Firge Regular
+for f in ${firge_familyname}-Regular.ttf ${firge_familyname}${firge_console_suffix}-Regular.ttf
 do
   ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
-# Add hinting HackGen Bold
-for f in ${hackgen_familyname}-Bold.ttf ${hackgen_familyname}${hackgen_console_suffix}-Bold.ttf
+# Add hinting Firge Bold
+for f in ${firge_familyname}-Bold.ttf ${firge_familyname}${firge_console_suffix}-Bold.ttf
 do
   ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
-# Add hinting HackGen35 Regular
-for f in ${hackgen35_familyname}-Regular.ttf ${hackgen35_familyname}${hackgen_console_suffix}-Regular.ttf
+# Add hinting Firge35 Regular
+for f in ${firge35_familyname}-Regular.ttf ${firge35_familyname}${firge_console_suffix}-Regular.ttf
 do
   ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
-# Add hinting HackGen35 Bold
-for f in ${hackgen35_familyname}-Bold.ttf ${hackgen35_familyname}${hackgen_console_suffix}-Bold.ttf
+# Add hinting Firge35 Bold
+for f in ${firge35_familyname}-Bold.ttf ${firge35_familyname}${firge_console_suffix}-Bold.ttf
 do
   ttfautohint -l 6 -r 45 -a qsq -D latn -W -I "$f" "hinted_${f}"
 done
@@ -2866,95 +2866,95 @@ do
     marge_genjyuu35_console_regular="${tmpdir}/${modified_genjyuu35_console_bold}.ttf"
   fi
 
-  hackgen_filename="${hackgen_familyname}-${style}.ttf"
-  hackgen_console_filename="${hackgen_familyname}${hackgen_console_suffix}-${style}.ttf"
-  hackgen35_filename="${hackgen35_familyname}-${style}.ttf"
-  hackgen35_console_filename="${hackgen35_familyname}${hackgen_console_suffix}-${style}.ttf"
+  firge_filename="${firge_familyname}-${style}.ttf"
+  firge_console_filename="${firge_familyname}${firge_console_suffix}-${style}.ttf"
+  firge35_filename="${firge35_familyname}-${style}.ttf"
+  firge35_console_filename="${firge35_familyname}${firge_console_suffix}-${style}.ttf"
 
-  #hackgen_nerd_filename="${hackgen_nerd_familyname}-${style}.ttf"
-  #hackgen_nerd_console_filename="${hackgen_nerd_familyname}${hackgen_console_suffix}-${style}.ttf"
-  #hackgen35_nerd_filename="${hackgen35_nerd_familyname}-${style}.ttf"
-  #hackgen35_nerd_console_filename="${hackgen35_nerd_familyname}${hackgen_console_suffix}-${style}.ttf"
+  #firge_nerd_filename="${firge_nerd_familyname}-${style}.ttf"
+  #firge_nerd_console_filename="${firge_nerd_familyname}${firge_console_suffix}-${style}.ttf"
+  #firge35_nerd_filename="${firge35_nerd_familyname}-${style}.ttf"
+  #firge35_nerd_console_filename="${firge35_nerd_familyname}${firge_console_suffix}-${style}.ttf"
 
-  # HackGen
-  echo "pyftmerge: ${hackgen_filename}"
-  # pyftmerge "hinted_${hackgen_filename}" "${hackgen_evacuation_symbol_familyname}${hackgen_familyname_suffix}-${style}.ttf"
+  # Firge
+  echo "pyftmerge: ${firge_filename}"
+  # pyftmerge "hinted_${firge_filename}" "${firge_evacuation_symbol_familyname}${firge_familyname_suffix}-${style}.ttf"
   # pyftmerge merged.ttf "$marge_genjyuu_regular"
-  pyftmerge "hinted_${hackgen_filename}" "$marge_genjyuu_regular"
-  mv merged.ttf "${hackgen_filename}"
+  pyftmerge "hinted_${firge_filename}" "$marge_genjyuu_regular"
+  mv merged.ttf "${firge_filename}"
 
-  # HackGen Console
-  echo "pyftmerge: ${hackgen_console_filename}"
-  # pyftmerge "hinted_${hackgen_console_filename}" "${hackgen_evacuation_symbol_familyname}${hackgen_familyname_suffix}-${style}.ttf"
-  # pyftmerge merged.ttf "${hackgen_box_drawing_light_familyname}${hackgen_familyname_suffix}-${style}.ttf"
+  # Firge Console
+  echo "pyftmerge: ${firge_console_filename}"
+  # pyftmerge "hinted_${firge_console_filename}" "${firge_evacuation_symbol_familyname}${firge_familyname_suffix}-${style}.ttf"
+  # pyftmerge merged.ttf "${firge_box_drawing_light_familyname}${firge_familyname_suffix}-${style}.ttf"
   # pyftmerge merged.ttf "$marge_genjyuu_console_regular"
-  pyftmerge "hinted_${hackgen_console_filename}" "${hackgen_box_drawing_light_familyname}${hackgen_familyname_suffix}-${style}.ttf"
+  pyftmerge "hinted_${firge_console_filename}" "${firge_box_drawing_light_familyname}${firge_familyname_suffix}-${style}.ttf"
   pyftmerge merged.ttf "$marge_genjyuu_console_regular"
-  mv merged.ttf "${hackgen_console_filename}"
+  mv merged.ttf "${firge_console_filename}"
 
-  # HackGen35
-  echo "pyftmerge: ${hackgen35_filename}"
-  # pyftmerge "hinted_${hackgen35_filename}" "${hackgen35_evacuation_symbol_familyname}${hackgen35_familyname_suffix}-${style}.ttf"
+  # Firge35
+  echo "pyftmerge: ${firge35_filename}"
+  # pyftmerge "hinted_${firge35_filename}" "${firge35_evacuation_symbol_familyname}${firge35_familyname_suffix}-${style}.ttf"
   # pyftmerge merged.ttf "$marge_genjyuu35_regular"
-  pyftmerge "hinted_${hackgen35_filename}" "$marge_genjyuu35_regular"
-  mv merged.ttf "${hackgen35_filename}"
+  pyftmerge "hinted_${firge35_filename}" "$marge_genjyuu35_regular"
+  mv merged.ttf "${firge35_filename}"
 
-  # HackGen35 Console
-  echo "pyftmerge: ${hackgen35_console_filename}"
-  # pyftmerge "hinted_${hackgen35_console_filename}" "${hackgen35_evacuation_symbol_familyname}${hackgen35_familyname_suffix}-${style}.ttf"
-  # pyftmerge merged.ttf "${hackgen35_box_drawing_light_familyname}${hackgen35_familyname_suffix}-${style}.ttf"
+  # Firge35 Console
+  echo "pyftmerge: ${firge35_console_filename}"
+  # pyftmerge "hinted_${firge35_console_filename}" "${firge35_evacuation_symbol_familyname}${firge35_familyname_suffix}-${style}.ttf"
+  # pyftmerge merged.ttf "${firge35_box_drawing_light_familyname}${firge35_familyname_suffix}-${style}.ttf"
   # pyftmerge merged.ttf "$marge_genjyuu35_console_regular"
-  pyftmerge "hinted_${hackgen35_console_filename}" "${hackgen35_box_drawing_light_familyname}${hackgen35_familyname_suffix}-${style}.ttf"
+  pyftmerge "hinted_${firge35_console_filename}" "${firge35_box_drawing_light_familyname}${firge35_familyname_suffix}-${style}.ttf"
   pyftmerge merged.ttf "$marge_genjyuu35_console_regular"
-  mv merged.ttf "${hackgen35_console_filename}"
+  mv merged.ttf "${firge35_console_filename}"
 
-  # HackGen Nerd
-  # echo "pyftmerge: ${hackgen_nerd_filename}"
-  # pyftmerge "${hackgen_filename}" "${hackgen_evacuation_nerd_familyname}${hackgen_familyname_suffix}-${style}.ttf"
-  # mv merged.ttf "${hackgen_nerd_filename}"
-  # ttx -t name "${hackgen_nerd_filename}"
-  # sed -i -e 's/HackGen/HackGenNerd/g' "${hackgen_nerd_filename%%.ttf}.ttx"
-  # mv "${hackgen_nerd_filename}" "${hackgen_nerd_filename}_orig"
-  # ttx -m "${hackgen_nerd_filename}_orig" "${hackgen_nerd_filename%%.ttf}.ttx"
+  # Firge Nerd
+  # echo "pyftmerge: ${firge_nerd_filename}"
+  # pyftmerge "${firge_filename}" "${firge_evacuation_nerd_familyname}${firge_familyname_suffix}-${style}.ttf"
+  # mv merged.ttf "${firge_nerd_filename}"
+  # ttx -t name "${firge_nerd_filename}"
+  # sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_filename%%.ttf}.ttx"
+  # mv "${firge_nerd_filename}" "${firge_nerd_filename}_orig"
+  # ttx -m "${firge_nerd_filename}_orig" "${firge_nerd_filename%%.ttf}.ttx"
 
-  # HackGen Nerd Console
-  # echo "pyftmerge: ${hackgen_nerd_console_filename}"
-  # pyftmerge "${hackgen_console_filename}" "${hackgen_evacuation_nerd_familyname}${hackgen_console_suffix}-${style}.ttf"
-  # mv merged.ttf "${hackgen_nerd_console_filename}"
-  # ttx -t name "${hackgen_nerd_console_filename}"
-  # sed -i -e 's/HackGen/HackGenNerd/g' "${hackgen_nerd_console_filename%%.ttf}.ttx"
-  # mv "${hackgen_nerd_console_filename}" "${hackgen_nerd_console_filename}_orig"
-  # ttx -m "${hackgen_nerd_console_filename}_orig" "${hackgen_nerd_console_filename%%.ttf}.ttx"
+  # Firge Nerd Console
+  # echo "pyftmerge: ${firge_nerd_console_filename}"
+  # pyftmerge "${firge_console_filename}" "${firge_evacuation_nerd_familyname}${firge_console_suffix}-${style}.ttf"
+  # mv merged.ttf "${firge_nerd_console_filename}"
+  # ttx -t name "${firge_nerd_console_filename}"
+  # sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_console_filename%%.ttf}.ttx"
+  # mv "${firge_nerd_console_filename}" "${firge_nerd_console_filename}_orig"
+  # ttx -m "${firge_nerd_console_filename}_orig" "${firge_nerd_console_filename%%.ttf}.ttx"
 
-  # HackGen35 Nerd
-  # echo "pyftmerge: ${hackgen35_nerd_filename}"
-  # pyftmerge "${hackgen35_filename}" "${hackgen35_evacuation_nerd_familyname}${hackgen35_familyname_suffix}-${style}.ttf"
-  # mv merged.ttf "${hackgen35_nerd_filename}"
-  # ttx -t name "${hackgen35_nerd_filename}"
-  # sed -i -e 's/HackGen35/HackGen35Nerd/g' "${hackgen35_nerd_filename%%.ttf}.ttx"
-  # mv "${hackgen35_nerd_filename}" "${hackgen35_nerd_filename}_orig"
-  # ttx -m "${hackgen35_nerd_filename}_orig" "${hackgen35_nerd_filename%%.ttf}.ttx"
+  # Firge35 Nerd
+  # echo "pyftmerge: ${firge35_nerd_filename}"
+  # pyftmerge "${firge35_filename}" "${firge35_evacuation_nerd_familyname}${firge35_familyname_suffix}-${style}.ttf"
+  # mv merged.ttf "${firge35_nerd_filename}"
+  # ttx -t name "${firge35_nerd_filename}"
+  # sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_filename%%.ttf}.ttx"
+  # mv "${firge35_nerd_filename}" "${firge35_nerd_filename}_orig"
+  # ttx -m "${firge35_nerd_filename}_orig" "${firge35_nerd_filename%%.ttf}.ttx"
 
-  # HackGen35 Nerd Console
-  # echo "pyftmerge: ${hackgen35_nerd_console_filename}"
-  # pyftmerge "${hackgen35_console_filename}" "${hackgen35_evacuation_nerd_familyname}${hackgen_console_suffix}-${style}.ttf"
-  # mv merged.ttf "${hackgen35_nerd_console_filename}"
-  # ttx -t name "${hackgen35_nerd_console_filename}"
-  # sed -i -e 's/HackGen35/HackGen35Nerd/g' "${hackgen35_nerd_console_filename%%.ttf}.ttx"
-  # mv "${hackgen35_nerd_console_filename}" "${hackgen35_nerd_console_filename}_orig"
-  # ttx -m "${hackgen35_nerd_console_filename}_orig" "${hackgen35_nerd_console_filename%%.ttf}.ttx"
+  # Firge35 Nerd Console
+  # echo "pyftmerge: ${firge35_nerd_console_filename}"
+  # pyftmerge "${firge35_console_filename}" "${firge35_evacuation_nerd_familyname}${firge_console_suffix}-${style}.ttf"
+  # mv merged.ttf "${firge35_nerd_console_filename}"
+  # ttx -t name "${firge35_nerd_console_filename}"
+  # sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_console_filename%%.ttf}.ttx"
+  # mv "${firge35_nerd_console_filename}" "${firge35_nerd_console_filename}_orig"
+  # ttx -m "${firge35_nerd_console_filename}_orig" "${firge35_nerd_console_filename%%.ttf}.ttx"
 
 done
 
 rm -f hinted_*.ttf
-rm -f "${hackgen_evacuation_symbol_familyname}"*.ttf
-rm -f "${hackgen35_evacuation_symbol_familyname}"*.ttf
-rm -f "${hackgen_evacuation_nerd_familyname}"*.ttf
-rm -f "${hackgen35_evacuation_nerd_familyname}"*.ttf
-rm -f "${hackgen_nerd_familyname}"*.ttx
-rm -f "${hackgen35_nerd_familyname}"*.ttx
-rm -f "${hackgen_box_drawing_light_familyname}"*.ttf
-rm -f "${hackgen35_box_drawing_light_familyname}"*.ttf
+rm -f "${firge_evacuation_symbol_familyname}"*.ttf
+rm -f "${firge35_evacuation_symbol_familyname}"*.ttf
+rm -f "${firge_evacuation_nerd_familyname}"*.ttf
+rm -f "${firge35_evacuation_nerd_familyname}"*.ttf
+rm -f "${firge_nerd_familyname}"*.ttx
+rm -f "${firge35_nerd_familyname}"*.ttx
+rm -f "${firge_box_drawing_light_familyname}"*.ttf
+rm -f "${firge35_box_drawing_light_familyname}"*.ttf
 
 # Remove temporary directory
 if [ "${leaving_tmp_flag}" = "false" ]
@@ -2964,5 +2964,5 @@ then
 fi
 
 # Exit
-echo "Succeeded in generating HackGen!"
+echo "Succeeded in generating Firge!"
 exit 0

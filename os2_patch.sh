@@ -4,12 +4,12 @@ BASE_DIR=$(cd $(dirname $0); pwd)
 PREFIX="$1"
 
 xAvgCharWidth_SETVAL=540
-HACKGEN_PATTERN=${PREFIX}'Firge[^3]*.ttf'
+FIRGE_PATTERN=${PREFIX}'Firge[^3]*.ttf'
 
-xAvgCharWidth53_SETVAL=1030
-HACKGEN53_PATTERN=${PREFIX}'Firge35*.ttf'
+xAvgCharWidth35_SETVAL=1030
+FIRGE35_PATTERN=${PREFIX}'Firge35*.ttf'
 
-for P in ${BASE_DIR}/${HACKGEN_PATTERN}; do
+for P in ${BASE_DIR}/${FIRGE_PATTERN}; do
   ttx -t OS/2 -t post "$P"
 
   xAvgCharWidth_value=$(grep xAvgCharWidth "${P%%.ttf}.ttx" | awk -F\" '{print $2}')
@@ -44,11 +44,11 @@ for P in ${BASE_DIR}/${HACKGEN_PATTERN}; do
   fi
 done
 
-for P in ${BASE_DIR}/${HACKGEN53_PATTERN}; do
+for P in ${BASE_DIR}/${FIRGE35_PATTERN}; do
   ttx -t OS/2 -t post "$P"
 
   xAvgCharWidth_value=$(grep xAvgCharWidth "${P%%.ttf}.ttx" | awk -F\" '{print $2}')
-  sed -i.bak -e 's,xAvgCharWidth value="'$xAvgCharWidth_value'",xAvgCharWidth value="'${xAvgCharWidth53_SETVAL}'",' "${P%%.ttf}.ttx"
+  sed -i.bak -e 's,xAvgCharWidth value="'$xAvgCharWidth_value'",xAvgCharWidth value="'${xAvgCharWidth35_SETVAL}'",' "${P%%.ttf}.ttx"
 
   fsSelection_value=$(grep fsSelection "${P%%.ttf}.ttx" | awk -F\" '{print $2}')
   if [ `echo $P | grep Regular` ]; then
