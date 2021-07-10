@@ -16,3 +16,10 @@ Fira Mono と源真ゴシックを合成したプログラミングフォント�
 |**Firge Console**|Fira Mono と源真ゴシックで重複する字体で Fira Mono を優先して適用している。そのため、矢印記号などの多くの記号が半角で表示される。コンソールでの利用や記号類は可能な限り半角で表示したい人にオススメ|
 |**Firge35**|通常版の Firge の文字幅比率を「半角3:全角5」にしたフォントファミリー。英数字が通常版の Firge よりも大きく表示される。日本語が少ない文書やコーディング用途の場合、こちらの方が見やすいと感じるかもしれない|
 |**Firge35 Console**|Firge Console  の文字幅比率を 半角3:全角5 にしたフォントファミリー|
+
+|**フォント ファミリー**|**説明**|
+|:------------:|:---|
+|**FirgeNerd**|Firge に Nerd Fonts を追加しているフォントファミリー|
+|**FirgeNerd Console**|Firge Console に Nerd Fonts を追加しているフォントファミリー|
+|**Firge35Nerd**|Firge35 に Nerd Fonts を追加しているフォントファミリー|
+|**Firge35Nerd Console**|Firge35 Console に Nerd Fonts を追加しているフォントファミリー|
