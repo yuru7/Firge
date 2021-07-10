@@ -72,10 +72,10 @@ mod_fira_bold_src="modify_FiraMono-Bold.sfd"
 
 mod_arrow_regular_src="modify_arrow_Hack-Regular.sfd"
 mod_arrow_bold_src="modify_arrow_Hack-Bold.sfd"
-nerd_patched_hack_regular_src="Hack Regular Nerd Font Complete.ttf"
-nerd_patched_hack_bold_src="Hack Bold Nerd Font Complete.ttf"
-nerd_patched_hack_regular_mono_src="Hack Regular Nerd Font Complete Mono.ttf"
-nerd_patched_hack_bold_mono_src="Hack Bold Nerd Font Complete Mono.ttf"
+nerd_patched_hack_regular_src="Fira Mono Regular Nerd Font Complete.otf"
+nerd_patched_hack_bold_src="Fira Mono Bold Nerd Font Complete.otf"
+nerd_patched_hack_regular_mono_src="Fira Mono Regular Nerd Font Complete Mono.otf"
+nerd_patched_hack_bold_mono_src="Fira Mono Bold Nerd Font Complete Mono.otf"
 genjyuu_regular_src="GenShinGothic-Monospace-Normal.ttf"
 genjyuu_bold_src="GenShinGothic-Monospace-Bold.ttf"
 
@@ -259,6 +259,7 @@ fi
 
 # Powerline フォント (Hack に標準で含まれている)
 powerline_symbols='
+  SelectMore(0ue0a0, 0ue0a2)
   SelectMore(0ue0b0, 0ue0b3)
 '
 
@@ -273,24 +274,8 @@ powerline_extra_symbols='
 
 # Nerd Fonts から適用するグリフ
 select_nerd_symbols="
-  # IEC Power Symbols
-  SelectMore(0u23fb, 0u23fe)
-  SelectMore(0u2b58)
-
-  # Octicons
-  SelectMore(0u2665)
-  SelectMore(0u26A1)
-  SelectMore(0uf27c)
-  SelectMore(0uf400, 0uf4a8)
-
-  # Font Awesome Extension
-  SelectMore(0ue200, 0ue2a9)
-
-  # Weather
-  SelectMore(0ue300, 0ue3e3)
-
   # Seti-UI + Custom
-  SelectMore(0ue5fa, 0ue62e)
+  SelectMore(0ue5fa, 0ue62b)
 
   # Devicons
   SelectMore(0ue700, 0ue7c5)
@@ -298,14 +283,27 @@ select_nerd_symbols="
   # Font Awesome
   SelectMore(0uf000, 0uf2e0)
 
-  # Font Logos (Formerly Font Linux)
-  SelectMore(0uf300, 0uf31c)
+  # Font Awesome Extension
+  SelectMore(0ue200, 0ue2a9)
 
   # Material Design Icons
   SelectMore(0uf500, 0ufd46)
 
-  # オリジナル Hack の未使用領域を一括選択 (拾い漏れ防止)
-  SelectMore(0ue0d5, 0ufefd)
+  # Weather
+  SelectMore(0ue300, 0ue3eb)
+
+  # Octicons
+  SelectMore(0uf400, 0uf4a8)
+  SelectMore(0u2665)
+  SelectMore(0u26A1)
+  SelectMore(0uf27c)
+
+  # IEC Power Symbols
+  SelectMore(0u23fb, 0u23fe)
+  SelectMore(0u2b58)
+
+  # Font Logos (Formerly Font Linux)
+  SelectMore(0uf300, 0uf313)
 
   # Pomicons -> 商用不可のため除外
   SelectFewer(0ue000, 0ue00d)
@@ -319,9 +317,6 @@ box_drawing_light_symbols="
 # ヒンティング処理から除外するグリフ
 select_evacuate_from_hinting="
   ${powerline_symbols}
-
-  # Lock Icon etc...
-  SelectMore(0ue0a0, 0ue0a2)
 "
 
 # console 版と通常版の Hack から合成するグリフ差分
@@ -596,7 +591,7 @@ cat > ${tmpdir}/${modified_hack_powerline_generator} << _EOT_
 Print("Generate powerline symbol for Firge")
 
 # Set parameters
-input_list  = ["${input_nerd_patched_hack_mono_regular}",    "${input_nerd_patched_hack_mono_bold}"]
+input_list  = ["${input_nerd_patched_hack_regular}",    "${input_nerd_patched_hack_bold}"]
 output_list = ["${modified_hack_powerline_regular}", "${modified_hack_powerline_bold}"]
 
 # Begin loop of regular and bold
@@ -608,6 +603,7 @@ while (i < SizeOf(input_list))
 
   # powerline extra の記号を残し、残りを削除
   SelectNone()
+  ${powerline_symbols}
   ${powerline_extra_symbols}
   SelectInvert()
   Clear()
@@ -618,18 +614,25 @@ while (i < SizeOf(input_list))
 
   Scale(${hack_shrink_x}, ${hack_shrink_y}, 0, 0)
 
-  # 細かな幅合わせ
-  Scale(99, 100, 0, 0)
-  Scale(100, 101)
-  Scale(100, 105, 0, 0)
-
   # 幅の変更 (Move で文字幅も変わることに注意)
   move_pt = $(((${firge_half_width} - ${hack_width} * ${hack_shrink_x} / 100) / 2)) # -8
   width_pt = ${firge_half_width}
   Move(move_pt, 0)
   SetWidth(width_pt, 0)
 
+  # 細かな幅合わせ
+  Select(0ue0b0) 
+  SelectMore(0ue0b4)
+  SelectMore(0ue0b8)
+  SelectMore(0ue0bc)
+  SelectMore(0ue0c0)
+  SelectMore(0ue0c8)
+  Move(-15, 0)
+  SelectWorthOutputting()
+  SetWidth(width_pt, 0)
+
   # パスの小数点以下を切り捨て
+  SelectWorthOutputting()
   RoundToInt()
 
   # Save modified Hack
@@ -652,7 +655,7 @@ cat > ${tmpdir}/${modified_hack35_powerline_generator} << _EOT_
 Print("Generate powerline symbol for Firge35")
 
 # Set parameters
-input_list  = ["${input_nerd_patched_hack_mono_regular}",    "${input_nerd_patched_hack_mono_bold}"]
+input_list  = ["${input_nerd_patched_hack_regular}",    "${input_nerd_patched_hack_bold}"]
 output_list = ["${modified_hack35_powerline_regular}", "${modified_hack35_powerline_bold}"]
 
 # Begin loop of regular and bold
@@ -664,6 +667,7 @@ while (i < SizeOf(input_list))
 
   # powerline extra の記号を残し、残りを削除
   SelectNone()
+  ${powerline_symbols}
   ${powerline_extra_symbols}
   SelectInvert()
   Clear()
@@ -1027,7 +1031,6 @@ while (i < SizeOf(input_list))
   # ヒンティング回避のため特定記号の削除
   SelectNone()
   ${box_drawing_light_symbols}
-  ${select_evacuate_from_hinting}
   Clear()
 
   # パスの小数点以下を切り捨て
@@ -1075,7 +1078,6 @@ while (i < SizeOf(input_list))
   # ヒンティング回避のため特定記号の削除
   SelectNone()
   ${box_drawing_light_symbols}
-  ${select_evacuate_from_hinting}
   Clear()
 
   # パスの小数点以下を切り捨て
@@ -2750,22 +2752,22 @@ $fontforge_command -script ${tmpdir}/${modified_hack_generator} 2> $redirection_
 $fontforge_command -script ${tmpdir}/${modified_genjyuu_generator} 2> $redirection_stderr || exit 4
 
 # Generate powerline Symbol
-# $fontforge_command -script ${tmpdir}/${modified_hack_powerline_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${modified_hack_powerline_generator} 2> $redirection_stderr || exit 4
 
 # Generate powerline Symbol
-# $fontforge_command -script ${tmpdir}/${modified_hack35_powerline_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${modified_hack35_powerline_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified Firge Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_firge_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${modified_firge_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified Firge Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_firge35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${modified_firge35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified Firge Console Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_firge_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${modified_firge_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Modified Firge Console Nerd Symbol
-# $fontforge_command -script ${tmpdir}/${modified_firge35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${modified_firge35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Hack evacuation symbol
 # $fontforge_command -script ${tmpdir}/${modified_hack_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
@@ -2807,16 +2809,16 @@ $fontforge_command -script ${tmpdir}/${firge35_generator} 2> $redirection_stderr
 $fontforge_command -script ${tmpdir}/${firge35_console_generator} 2> $redirection_stderr || exit 4
 
 # Generate Firge Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${firge_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${firge_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Firge35 Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${firge35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${firge35_nerd_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Firge Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${firge_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${firge_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Firge35 Nerd Symbol
-#$fontforge_command -script ${tmpdir}/${firge35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
+$fontforge_command -script ${tmpdir}/${firge35_nerd_console_symbol_generator} 2> $redirection_stderr || exit 4
 
 # Generate Firge evacuation symbol from hinting
 # $fontforge_command -script ${tmpdir}/${firge_evacuate_from_hinting_generator} 2> $redirection_stderr || exit 4
@@ -2871,10 +2873,10 @@ do
   firge35_filename="${firge35_familyname}-${style}.ttf"
   firge35_console_filename="${firge35_familyname}${firge_console_suffix}-${style}.ttf"
 
-  #firge_nerd_filename="${firge_nerd_familyname}-${style}.ttf"
-  #firge_nerd_console_filename="${firge_nerd_familyname}${firge_console_suffix}-${style}.ttf"
-  #firge35_nerd_filename="${firge35_nerd_familyname}-${style}.ttf"
-  #firge35_nerd_console_filename="${firge35_nerd_familyname}${firge_console_suffix}-${style}.ttf"
+  firge_nerd_filename="${firge_nerd_familyname}-${style}.ttf"
+  firge_nerd_console_filename="${firge_nerd_familyname}${firge_console_suffix}-${style}.ttf"
+  firge35_nerd_filename="${firge35_nerd_familyname}-${style}.ttf"
+  firge35_nerd_console_filename="${firge35_nerd_familyname}${firge_console_suffix}-${style}.ttf"
 
   # Firge
   echo "pyftmerge: ${firge_filename}"
@@ -2909,40 +2911,54 @@ do
   mv merged.ttf "${firge35_console_filename}"
 
   # Firge Nerd
-  # echo "pyftmerge: ${firge_nerd_filename}"
+  echo "pyftmerge: ${firge_nerd_filename}"
   # pyftmerge "${firge_filename}" "${firge_evacuation_nerd_familyname}${firge_familyname_suffix}-${style}.ttf"
   # mv merged.ttf "${firge_nerd_filename}"
-  # ttx -t name "${firge_nerd_filename}"
-  # sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_filename%%.ttf}.ttx"
-  # mv "${firge_nerd_filename}" "${firge_nerd_filename}_orig"
-  # ttx -m "${firge_nerd_filename}_orig" "${firge_nerd_filename%%.ttf}.ttx"
+  pyftmerge "hinted_${firge_filename}" "${firge_evacuation_nerd_familyname}${firge_familyname_suffix}-${style}.ttf"
+  pyftmerge merged.ttf "$marge_genjyuu_regular"
+  mv merged.ttf "${firge_nerd_filename}"
+  ttx -t name "${firge_nerd_filename}"
+  sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_filename%%.ttf}.ttx"
+  mv "${firge_nerd_filename}" "${firge_nerd_filename}_orig"
+  ttx -m "${firge_nerd_filename}_orig" "${firge_nerd_filename%%.ttf}.ttx"
 
   # Firge Nerd Console
-  # echo "pyftmerge: ${firge_nerd_console_filename}"
+  echo "pyftmerge: ${firge_nerd_console_filename}"
   # pyftmerge "${firge_console_filename}" "${firge_evacuation_nerd_familyname}${firge_console_suffix}-${style}.ttf"
   # mv merged.ttf "${firge_nerd_console_filename}"
-  # ttx -t name "${firge_nerd_console_filename}"
-  # sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_console_filename%%.ttf}.ttx"
-  # mv "${firge_nerd_console_filename}" "${firge_nerd_console_filename}_orig"
-  # ttx -m "${firge_nerd_console_filename}_orig" "${firge_nerd_console_filename%%.ttf}.ttx"
+  pyftmerge "hinted_${firge_console_filename}" "${firge_box_drawing_light_familyname}${firge_familyname_suffix}-${style}.ttf"
+  pyftmerge merged.ttf "${firge_evacuation_nerd_familyname}${firge_console_suffix}-${style}.ttf"
+  pyftmerge merged.ttf "$marge_genjyuu_console_regular"
+  mv merged.ttf "${firge_nerd_console_filename}"
+  ttx -t name "${firge_nerd_console_filename}"
+  sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_console_filename%%.ttf}.ttx"
+  mv "${firge_nerd_console_filename}" "${firge_nerd_console_filename}_orig"
+  ttx -m "${firge_nerd_console_filename}_orig" "${firge_nerd_console_filename%%.ttf}.ttx"
 
   # Firge35 Nerd
-  # echo "pyftmerge: ${firge35_nerd_filename}"
+  echo "pyftmerge: ${firge35_nerd_filename}"
   # pyftmerge "${firge35_filename}" "${firge35_evacuation_nerd_familyname}${firge35_familyname_suffix}-${style}.ttf"
   # mv merged.ttf "${firge35_nerd_filename}"
-  # ttx -t name "${firge35_nerd_filename}"
-  # sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_filename%%.ttf}.ttx"
-  # mv "${firge35_nerd_filename}" "${firge35_nerd_filename}_orig"
-  # ttx -m "${firge35_nerd_filename}_orig" "${firge35_nerd_filename%%.ttf}.ttx"
+  pyftmerge "hinted_${firge35_filename}" "${firge35_evacuation_nerd_familyname}${firge35_familyname_suffix}-${style}.ttf"
+  pyftmerge merged.ttf "$marge_genjyuu35_regular"
+  mv merged.ttf "${firge35_nerd_filename}"
+  ttx -t name "${firge35_nerd_filename}"
+  sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_filename%%.ttf}.ttx"
+  mv "${firge35_nerd_filename}" "${firge35_nerd_filename}_orig"
+  ttx -m "${firge35_nerd_filename}_orig" "${firge35_nerd_filename%%.ttf}.ttx"
 
   # Firge35 Nerd Console
-  # echo "pyftmerge: ${firge35_nerd_console_filename}"
+  echo "pyftmerge: ${firge35_nerd_console_filename}"
   # pyftmerge "${firge35_console_filename}" "${firge35_evacuation_nerd_familyname}${firge_console_suffix}-${style}.ttf"
   # mv merged.ttf "${firge35_nerd_console_filename}"
-  # ttx -t name "${firge35_nerd_console_filename}"
-  # sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_console_filename%%.ttf}.ttx"
-  # mv "${firge35_nerd_console_filename}" "${firge35_nerd_console_filename}_orig"
-  # ttx -m "${firge35_nerd_console_filename}_orig" "${firge35_nerd_console_filename%%.ttf}.ttx"
+  pyftmerge "hinted_${firge35_console_filename}" "${firge35_box_drawing_light_familyname}${firge35_familyname_suffix}-${style}.ttf"
+  pyftmerge merged.ttf "${firge35_evacuation_nerd_familyname}${firge_console_suffix}-${style}.ttf"
+  pyftmerge merged.ttf "$marge_genjyuu35_console_regular"
+  mv merged.ttf "${firge35_nerd_console_filename}"
+  ttx -t name "${firge35_nerd_console_filename}"
+  sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_console_filename%%.ttf}.ttx"
+  mv "${firge35_nerd_console_filename}" "${firge35_nerd_console_filename}_orig"
+  ttx -m "${firge35_nerd_console_filename}_orig" "${firge35_nerd_console_filename%%.ttf}.ttx"
 
 done
 
