@@ -4,7 +4,9 @@ Fira Mono と源真ゴシックを合成したプログラミングフォント�
 
 ダウンロードはこちら: [Releases](https://github.com/yuru7/Firge/releases)
 
-英数字部分に Hack を使った姉妹フォント [白源 \(はくげん／HackGen\)](https://github.com/yuru7/HackGen) もどうぞ。
+> 💡 その他、公開中のプログラミングフォント
+> - 日本語文字に源柔ゴシック、英数字部分に Hack を使った [**白源 (はくげん／HackGen)**](https://github.com/yuru7/HackGen)
+> - 日本語文字に IBM Plex Mono、英数字部分に IBM Plex Sans JP を使った [**PlemolJP (プレモル ジェイピー)**](https://github.com/yuru7/PlemolJP)
 
 |Firge|Firge35|
 |:---:|:---:|
