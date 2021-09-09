@@ -2,7 +2,7 @@
 
 base_dir=$(cd $(dirname $0); pwd)
 # Firge Generator
-firge_version="0.1.0"
+firge_version="0.2.0"
 
 # Set familyname
 familyname_preffix="$1"
