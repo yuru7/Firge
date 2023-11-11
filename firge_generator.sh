@@ -2,10 +2,10 @@
 
 base_dir=$(cd $(dirname $0); pwd)
 # Firge Generator
-firge_version="0.2.0"
+firge_version="$1"
 
 # Set familyname
-familyname_preffix="$1"
+familyname_preffix="$2"
 firge_familyname=${familyname_preffix}"Firge"
 firge_familyname_suffix=""
 firge35_familyname=${firge_familyname}"35"
@@ -19,6 +19,8 @@ firge_evacuation_symbol_familyname=${firge_familyname}"EvacuationSymbol"
 firge35_evacuation_symbol_familyname=${firge35_familyname}"EvacuationSymbol"
 firge_box_drawing_light_familyname=${firge_familyname}"BoxDrawingLight"
 firge35_box_drawing_light_familyname=${firge35_familyname}"BoxDrawingLight"
+
+copyright='###COPYRIGHT###'
 
 # Set ascent and descent (line width parameters)
 firge_ascent=938
@@ -72,10 +74,8 @@ mod_fira_bold_src="modify_FiraMono-Bold.sfd"
 
 mod_arrow_regular_src="modify_arrow_Hack-Regular.sfd"
 mod_arrow_bold_src="modify_arrow_Hack-Bold.sfd"
-nerd_patched_hack_regular_src="Fira Mono Regular Nerd Font Complete.otf"
-nerd_patched_hack_bold_src="Fira Mono Bold Nerd Font Complete.otf"
-nerd_patched_hack_regular_mono_src="Fira Mono Regular Nerd Font Complete Mono.otf"
-nerd_patched_hack_bold_mono_src="Fira Mono Bold Nerd Font Complete Mono.otf"
+nerd_patched_hack_regular_src="FiraMonoNerdFont-Regular.otf"
+nerd_patched_hack_bold_src="FiraMonoNerdFont-Bold.otf"
 genjyuu_regular_src="GenShinGothic-Monospace-Normal.ttf"
 genjyuu_bold_src="GenShinGothic-Monospace-Bold.ttf"
 
@@ -223,8 +223,6 @@ input_ideographic_space=`find $fonts_directories -follow -iname Ideographic_Spac
 # Search nerd patched hack
 input_nerd_patched_hack_regular=`find $fonts_directories -follow -iname "$nerd_patched_hack_regular_src" | head -n 1`
 input_nerd_patched_hack_bold=`find $fonts_directories -follow -iname "$nerd_patched_hack_bold_src"    | head -n 1`
-input_nerd_patched_hack_mono_regular=`find $fonts_directories -follow -iname "$nerd_patched_hack_regular_mono_src" | head -n 1`
-input_nerd_patched_hack_mono_bold=`find $fonts_directories -follow -iname "$nerd_patched_hack_bold_mono_src"    | head -n 1`
 
 # Check filename
 [ "$(basename $input_hack_regular)" != "$hack_regular_src" ] &&
@@ -280,36 +278,30 @@ select_nerd_symbols="
   # IEC Power Symbols
   SelectMore(0u23fb, 0u23fe)
   SelectMore(0u2b58)
-
   # Octicons
   SelectMore(0u2665)
-  SelectMore(0u26A1)
-  SelectMore(0uf27c)
-  SelectMore(0uf400, 0uf4a8)
-
+  SelectMore(0u26a1)
+  SelectMore(0uf400, 0uf532)
+  # Pomicons
+  SelectMore(0ue000, 0ue00a)
   # Font Awesome Extension
   SelectMore(0ue200, 0ue2a9)
-
-  # Weather
+  # Weather Icons
   SelectMore(0ue300, 0ue3e3)
-
   # Seti-UI + Custom
-  SelectMore(0ue5fa, 0ue62e)
-
+  SelectMore(0ue5fa, 0ue6ac)
   # Devicons
   SelectMore(0ue700, 0ue7c5)
-
+  # Codicons
+  SelectMore(0uea60, 0uebeb)
   # Font Awesome
   SelectMore(0uf000, 0uf2e0)
-
-  # Font Logos (Formerly Font Linux)
-  SelectMore(0uf300, 0uf31c)
-
-  # Material Design Icons
-  SelectMore(0uf500, 0ufd46)
-
-  # Pomicons -> 商用不可のため除外
-  SelectFewer(0ue000, 0ue00d)
+  # Font Logos
+  SelectMore(0uf300, 0uf32f)
+  # Material Design
+  SelectMore(0uf0001, 0uf1af0)
+  # Other
+  SelectMore(0u2630)
 "
 
 # 罫線記号
@@ -1668,7 +1660,7 @@ fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -1758,7 +1750,7 @@ fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -1849,7 +1841,7 @@ fontfamilysuffix  = "${firge35_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -1940,7 +1932,7 @@ fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2031,7 +2023,7 @@ fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2120,7 +2112,7 @@ fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2208,7 +2200,7 @@ fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2296,7 +2288,7 @@ fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2384,7 +2376,7 @@ fontfamilysuffix  = "${firge_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2472,7 +2464,7 @@ fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2560,7 +2552,7 @@ fontfamilysuffix  = "${firge35_familyname_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2648,7 +2640,7 @@ fontfamilysuffix  = "${firge_console_suffix}"
 fontstyle_list    = ["Regular", "Bold"]
 fontweight_list   = [400,       700]
 panoseweight_list = [5,         8]
-copyright         = "Copyright (c) 2019, Yuko Otawara"
+copyright         = "${copyright}"
 version           = "${firge_version}"
 
 # Begin loop of regular and bold
@@ -2894,16 +2886,16 @@ do
   mv merged.ttf "${firge35_console_filename}"
 
   # Firge Nerd
-  echo "pyftmerge: ${firge_nerd_filename}"
-  # pyftmerge "${firge_filename}" "${firge_evacuation_nerd_familyname}${firge_familyname_suffix}-${style}.ttf"
+  # echo "pyftmerge: ${firge_nerd_filename}"
+  # # pyftmerge "${firge_filename}" "${firge_evacuation_nerd_familyname}${firge_familyname_suffix}-${style}.ttf"
+  # # mv merged.ttf "${firge_nerd_filename}"
+  # pyftmerge "hinted_${firge_filename}" "${firge_evacuation_nerd_familyname}${firge_familyname_suffix}-${style}.ttf"
+  # pyftmerge merged.ttf "$marge_genjyuu_regular"
   # mv merged.ttf "${firge_nerd_filename}"
-  pyftmerge "hinted_${firge_filename}" "${firge_evacuation_nerd_familyname}${firge_familyname_suffix}-${style}.ttf"
-  pyftmerge merged.ttf "$marge_genjyuu_regular"
-  mv merged.ttf "${firge_nerd_filename}"
-  ttx -t name "${firge_nerd_filename}"
-  sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_filename%%.ttf}.ttx"
-  mv "${firge_nerd_filename}" "${firge_nerd_filename}_orig"
-  ttx -m "${firge_nerd_filename}_orig" "${firge_nerd_filename%%.ttf}.ttx"
+  # ttx -t name "${firge_nerd_filename}"
+  # sed -i -e 's/Firge/FirgeNerd/g' "${firge_nerd_filename%%.ttf}.ttx"
+  # mv "${firge_nerd_filename}" "${firge_nerd_filename}_orig"
+  # ttx -m "${firge_nerd_filename}_orig" "${firge_nerd_filename%%.ttf}.ttx"
 
   # Firge Nerd Console
   echo "pyftmerge: ${firge_nerd_console_filename}"
@@ -2919,16 +2911,16 @@ do
   ttx -m "${firge_nerd_console_filename}_orig" "${firge_nerd_console_filename%%.ttf}.ttx"
 
   # Firge35 Nerd
-  echo "pyftmerge: ${firge35_nerd_filename}"
-  # pyftmerge "${firge35_filename}" "${firge35_evacuation_nerd_familyname}${firge35_familyname_suffix}-${style}.ttf"
+  # echo "pyftmerge: ${firge35_nerd_filename}"
+  # # pyftmerge "${firge35_filename}" "${firge35_evacuation_nerd_familyname}${firge35_familyname_suffix}-${style}.ttf"
+  # # mv merged.ttf "${firge35_nerd_filename}"
+  # pyftmerge "hinted_${firge35_filename}" "${firge35_evacuation_nerd_familyname}${firge35_familyname_suffix}-${style}.ttf"
+  # pyftmerge merged.ttf "$marge_genjyuu35_regular"
   # mv merged.ttf "${firge35_nerd_filename}"
-  pyftmerge "hinted_${firge35_filename}" "${firge35_evacuation_nerd_familyname}${firge35_familyname_suffix}-${style}.ttf"
-  pyftmerge merged.ttf "$marge_genjyuu35_regular"
-  mv merged.ttf "${firge35_nerd_filename}"
-  ttx -t name "${firge35_nerd_filename}"
-  sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_filename%%.ttf}.ttx"
-  mv "${firge35_nerd_filename}" "${firge35_nerd_filename}_orig"
-  ttx -m "${firge35_nerd_filename}_orig" "${firge35_nerd_filename%%.ttf}.ttx"
+  # ttx -t name "${firge35_nerd_filename}"
+  # sed -i -e 's/Firge35/Firge35Nerd/g' "${firge35_nerd_filename%%.ttf}.ttx"
+  # mv "${firge35_nerd_filename}" "${firge35_nerd_filename}_orig"
+  # ttx -m "${firge35_nerd_filename}_orig" "${firge35_nerd_filename%%.ttf}.ttx"
 
   # Firge35 Nerd Console
   echo "pyftmerge: ${firge35_nerd_console_filename}"
